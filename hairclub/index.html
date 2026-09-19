@@ -1,0 +1,125 @@
+<title>Hair Club Trezzo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Manrope:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f6eeea; --surface:#fffbf9; --ink:#241b1d; --ink-soft:#6b5a5c;
+    --plum:#241b1d; --rose:#a85d6a; --rose-soft:#e7c3c9;
+    --border:#e6d5d2;
+    --font-display:'Bodoni Moda', Georgia, serif;
+    --font-body:'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
+      --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
+      --border:#3a2629;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
+    --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
+    --border:#3a2629;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 20px;}
+  header.hero{background:var(--plum); padding-block:60px 46px;}
+  header.hero .eyebrow{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--rose); font-weight:600; margin:0 0 12px;
+  }
+  header.hero h1{
+    font-family:var(--font-display); font-weight:500; font-style:italic;
+    font-size:clamp(2.3rem, 6.5vw, 3.6rem); margin:0 0 14px; color:#f7ece9;
+    text-wrap:balance;
+  }
+  header.hero p.tagline{font-size:1.05rem; margin:0 0 22px; color:var(--rose-soft); max-width:44ch;}
+  .hours-pill{
+    display:inline-flex; gap:10px; align-items:baseline;
+    background:rgba(247,236,233,0.08); border:1px solid rgba(247,236,233,0.22);
+    padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f0dcd9;
+  }
+  .hours-pill b{color:var(--rose); font-weight:600;}
+  section{padding-block:44px;}
+  section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
+  h2{
+    font-family:var(--font-display); font-weight:500; font-size:1.75rem;
+    margin:0 0 18px; color:var(--ink); text-wrap:balance;
+  }
+  .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .service{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px 16px;}
+  .service .mark{font-family:var(--font-display); font-style:italic; font-size:1.5rem; color:var(--rose); display:block; margin-bottom:6px;}
+  .service h3{font-size:1rem; margin:0 0 6px; font-weight:600;}
+  .service p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+  table.orari{border-collapse:collapse; width:100%; max-width:440px; font-variant-numeric:tabular-nums;}
+  table.orari td{padding:9px 0; border-bottom:1px solid var(--border); font-size:0.95rem;}
+  table.orari td:last-child{text-align:right; color:var(--ink-soft);}
+  footer{background:var(--surface); border-top:1px solid var(--border); padding-block:32px 40px;}
+  footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; color:var(--ink-soft); margin-bottom:20px;}
+  footer .contact-grid strong{color:var(--ink); font-weight:600;}
+  .demo-note{font-size:0.78rem; color:var(--ink-soft); border-top:1px dashed var(--border); padding-top:16px; margin-top:20px;}
+  @media (max-width:520px){.services{grid-template-columns:1fr;}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Via Rocca, 11 — Trezzo sull'Adda</p>
+    <h1>Hair Club</h1>
+    <p class="tagline">Il salone di Ombretta Cammarata, dove ogni taglio parte da un'idea precisa.</p>
+    <span class="hours-pill">Oggi: <b>aperto</b> · 9:00 – 19:00</span>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <h2>Il salone</h2>
+    <p>Un salone da donna nel cuore di Trezzo sull'Adda, dove Ombretta e il suo staff seguono ogni cliente con attenzione, dal taglio al colore, senza fretta.</p>
+  </div>
+</section>
+
+<section class="offerte">
+  <div class="wrap">
+    <h2>Servizi</h2>
+    <div class="services">
+      <div class="service">
+        <span class="mark">✂</span>
+        <h3>Taglio e piega</h3>
+        <p>Su misura per te, dal consulto alla messa in piega finale.</p>
+      </div>
+      <div class="service">
+        <span class="mark">◐</span>
+        <h3>Colore</h3>
+        <p>Colorazione, schiariture e trattamenti su misura per ogni base.</p>
+      </div>
+      <div class="service">
+        <span class="mark">✦</span>
+        <h3>Trattamenti</h3>
+        <p>Ricostruzione e cura per capelli sani e luminosi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="orari-section">
+  <div class="wrap">
+    <h2>Orari</h2>
+    <table class="orari">
+      <tr><td>Lunedì</td><td>9:00 – 19:00</td></tr>
+      <tr><td>Martedì</td><td>14:30 – 22:00</td></tr>
+      <tr><td>Mercoledì – Venerdì</td><td>9:00 – 19:00</td></tr>
+      <tr><td>Sabato</td><td>8:30 – 18:00</td></tr>
+      <tr><td>Domenica</td><td>chiuso</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Prenota</h2>
+    <div class="contact-grid">
+      <div><strong>Indirizzo</strong> — Via Rocca, 11, Trezzo sull'Adda</div>
+      <div><strong>Telefono</strong> — 02 9092237</div>
+    </div>
+    <p class="demo-note">Sito dimostrativo creato da nefaSto: il vostro sito non risultava raggiungibile, quindi ne ho preparato uno vero e funzionante — orari, servizi, contatti. Se vi piace, è pronto in poche ore.</p>
+  </div>
+</footer>

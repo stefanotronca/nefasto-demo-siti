@@ -1,33 +1,41 @@
-<title>Hair Club Trezzo — Base</title>
+<title>Hair Club Trezzo — Premium</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Manrope:wght@400;500;600&display=swap">
 <style>
   :root{
     --bg:#f6eeea; --surface:#fffbf9; --ink:#241b1d; --ink-soft:#6b5a5c;
     --plum:#241b1d; --rose:#a85d6a; --rose-soft:#e7c3c9;
-    --border:#e6d5d2;
+    --border:#e6d5d2; --placeholder:#e2cfc9;
     --font-display:'Bodoni Moda', Georgia, serif;
     --font-body:'Manrope', 'Helvetica Neue', Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
-      --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
+      --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339; --placeholder:#3a2629;
       --border:#3a2629;
     }
   }
   :root[data-theme="dark"]{
     --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
-    --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
+    --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339; --placeholder:#3a2629;
     --border:#3a2629;
   }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
   .wrap{max-width:760px; margin:0 auto; padding:0 20px;}
   .tier-flag{
-    background:var(--border); color:var(--ink); text-align:center; font-size:12px;
+    background:var(--rose); color:#2a1418; text-align:center; font-size:12px;
     font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:8px;
   }
-  header.hero{background:var(--plum); padding-block:56px 44px;}
+  header.hero{
+    position:relative; background:var(--plum); padding-block:64px 46px; overflow:hidden;
+  }
+  .hero-photo-slot{
+    position:absolute; inset:0; background:
+      repeating-linear-gradient(135deg, var(--placeholder), var(--placeholder) 10px, transparent 10px, transparent 20px);
+    opacity:0.18;
+  }
+  header.hero .inner{position:relative;}
   header.hero .eyebrow{
     font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
     color:var(--rose); font-weight:600; margin:0 0 12px;
@@ -38,17 +46,32 @@
     text-wrap:balance;
   }
   header.hero p.tagline{font-size:1.05rem; margin:0 0 22px; color:var(--rose-soft); max-width:44ch;}
+  .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px;
+    font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--rose); color:#2a1418;}
+  .btn-ghost{background:transparent; color:#f0dcd9; border-color:rgba(247,236,233,0.3);}
   .hours-pill{
     display:inline-flex; gap:10px; align-items:baseline;
     background:rgba(247,236,233,0.08); border:1px solid rgba(247,236,233,0.22);
     padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f0dcd9;
   }
   .hours-pill b{color:var(--rose); font-weight:600;}
-  section{padding-block:44px;}
+  section{padding-block:40px;}
   section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
   h2{
     font-family:var(--font-display); font-weight:500; font-size:1.75rem;
     margin:0 0 18px; color:var(--ink); text-wrap:balance;
+  }
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  .photo-slot{
+    aspect-ratio:1; border-radius:10px; border:1.5px dashed var(--border);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    color:var(--ink-soft); font-size:0.78rem; padding:10px;
+    background:
+      repeating-linear-gradient(135deg, var(--placeholder), var(--placeholder) 8px, transparent 8px, transparent 16px);
   }
   .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
   .service{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px 16px;}
@@ -58,20 +81,33 @@
   table.orari{border-collapse:collapse; width:100%; max-width:440px; font-variant-numeric:tabular-nums;}
   table.orari td{padding:9px 0; border-bottom:1px solid var(--border); font-size:0.95rem;}
   table.orari td:last-child{text-align:right; color:var(--ink-soft);}
+  .map-frame{border:1px solid var(--border); border-radius:10px; overflow:hidden; max-width:100%;}
+  .map-frame iframe{display:block; width:100%; height:260px; border:0;}
+  .included{
+    display:grid; gap:10px; background:var(--surface); border:1px solid var(--border);
+    border-radius:10px; padding:20px;
+  }
+  .included .row{display:flex; gap:10px; font-size:0.92rem;}
+  .included .row b{color:var(--rose);}
   footer{background:var(--surface); border-top:1px solid var(--border); padding-block:32px 40px;}
   footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; color:var(--ink-soft); margin-bottom:20px;}
   footer .contact-grid strong{color:var(--ink); font-weight:600;}
   .demo-note{font-size:0.78rem; color:var(--ink-soft); border-top:1px dashed var(--border); padding-top:16px; margin-top:20px;}
-  @media (max-width:520px){.services{grid-template-columns:1fr;}}
+  @media (max-width:520px){.services{grid-template-columns:1fr;} .gallery{grid-template-columns:repeat(2,1fr);}}
 </style>
 
-<div class="tier-flag">Versione Base — 100€</div>
+<div class="tier-flag">Versione Premium — 279€</div>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="hero-photo-slot"></div>
+  <div class="wrap inner">
     <p class="eyebrow">Via Rocca, 11 — Trezzo sull'Adda</p>
     <h1>Hair Club</h1>
     <p class="tagline">Il salone di Ombretta Cammarata, dove ogni taglio parte da un'idea precisa.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:0290922337">Chiama e prenota</a>
+      <a class="btn btn-ghost" href="https://instagram.com/hairclubtrezzo" target="_blank" rel="noopener">Instagram @hairclubtrezzo</a>
+    </div>
     <span class="hours-pill">Oggi: <b>aperto</b> · 9:00 – 19:00</span>
   </div>
 </header>
@@ -80,6 +116,17 @@
   <div class="wrap">
     <h2>Il salone</h2>
     <p>Un salone da donna nel cuore di Trezzo sull'Adda, dove Ombretta e il suo staff seguono ogni cliente con attenzione, dal taglio al colore, senza fretta.</p>
+  </div>
+</section>
+
+<section class="galleria">
+  <div class="wrap">
+    <h2>Galleria</h2>
+    <div class="gallery">
+      <div class="photo-slot">la vostra foto qui</div>
+      <div class="photo-slot">la vostra foto qui</div>
+      <div class="photo-slot">la vostra foto qui</div>
+    </div>
   </div>
 </section>
 
@@ -106,16 +153,23 @@
   </div>
 </section>
 
-<section class="orari-section">
+<section class="dove">
   <div class="wrap">
-    <h2>Orari</h2>
-    <table class="orari">
-      <tr><td>Lunedì</td><td>9:00 – 19:00</td></tr>
-      <tr><td>Martedì</td><td>14:30 – 22:00</td></tr>
-      <tr><td>Mercoledì – Venerdì</td><td>9:00 – 19:00</td></tr>
-      <tr><td>Sabato</td><td>8:30 – 18:00</td></tr>
-      <tr><td>Domenica</td><td>chiuso</td></tr>
-    </table>
+    <h2>Dove siamo</h2>
+    <div class="map-frame">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Via%20Rocca%2011%20Trezzo%20sull%27Adda&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="incluso">
+  <div class="wrap">
+    <h2>Cosa include</h2>
+    <div class="included">
+      <div class="row"><b>✓</b> Foto vere del salone al posto dei placeholder</div>
+      <div class="row"><b>✓</b> Dominio personalizzato incluso (es. hairclubtrezzo.it)</div>
+      <div class="row"><b>✓</b> Codice del sito consegnato a voi — resta vostro anche se nefaSto chiude</div>
+    </div>
   </div>
 </section>
 
@@ -126,6 +180,6 @@
       <div><strong>Indirizzo</strong> — Via Rocca, 11, Trezzo sull'Adda</div>
       <div><strong>Telefono</strong> — 02 9092237</div>
     </div>
-    <p class="demo-note">Versione Base: informazioni pubbliche, hosting su infrastruttura nefaSto. Se nefaSto termina l'attività, il codice sorgente viene comunque consegnato su richiesta.</p>
+    <p class="demo-note">Versione Premium: le foto sono segnaposto, verrebbero sostituite con le vostre reali. Dominio personalizzato e proprietà del codice inclusi nel prezzo.</p>
   </div>
 </footer>

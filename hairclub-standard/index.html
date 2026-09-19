@@ -1,4 +1,4 @@
-<title>Hair Club Trezzo — Base</title>
+<title>Hair Club Trezzo — Standard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Manrope:wght@400;500;600&display=swap">
 <style>
   :root{
@@ -24,10 +24,10 @@
   body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
   .wrap{max-width:760px; margin:0 auto; padding:0 20px;}
   .tier-flag{
-    background:var(--border); color:var(--ink); text-align:center; font-size:12px;
+    background:var(--rose); color:#2a1418; text-align:center; font-size:12px;
     font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:8px;
   }
-  header.hero{background:var(--plum); padding-block:56px 44px;}
+  header.hero{background:var(--plum); padding-block:52px 40px;}
   header.hero .eyebrow{
     font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
     color:var(--rose); font-weight:600; margin:0 0 12px;
@@ -38,13 +38,20 @@
     text-wrap:balance;
   }
   header.hero p.tagline{font-size:1.05rem; margin:0 0 22px; color:var(--rose-soft); max-width:44ch;}
+  .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px;
+    font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--rose); color:#2a1418;}
+  .btn-ghost{background:transparent; color:#f0dcd9; border-color:rgba(247,236,233,0.3);}
   .hours-pill{
     display:inline-flex; gap:10px; align-items:baseline;
     background:rgba(247,236,233,0.08); border:1px solid rgba(247,236,233,0.22);
     padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f0dcd9;
   }
   .hours-pill b{color:var(--rose); font-weight:600;}
-  section{padding-block:44px;}
+  section{padding-block:40px;}
   section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
   h2{
     font-family:var(--font-display); font-weight:500; font-size:1.75rem;
@@ -58,6 +65,10 @@
   table.orari{border-collapse:collapse; width:100%; max-width:440px; font-variant-numeric:tabular-nums;}
   table.orari td{padding:9px 0; border-bottom:1px solid var(--border); font-size:0.95rem;}
   table.orari td:last-child{text-align:right; color:var(--ink-soft);}
+  .map-frame{border:1px solid var(--border); border-radius:10px; overflow:hidden; max-width:100%;}
+  .map-frame iframe{display:block; width:100%; height:260px; border:0;}
+  .social-row{display:flex; gap:10px; align-items:center; margin-top:14px;}
+  .social-row a{color:var(--rose); font-weight:600; text-decoration:none; font-size:0.9rem;}
   footer{background:var(--surface); border-top:1px solid var(--border); padding-block:32px 40px;}
   footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; color:var(--ink-soft); margin-bottom:20px;}
   footer .contact-grid strong{color:var(--ink); font-weight:600;}
@@ -65,13 +76,17 @@
   @media (max-width:520px){.services{grid-template-columns:1fr;}}
 </style>
 
-<div class="tier-flag">Versione Base — 100€</div>
+<div class="tier-flag">Versione Standard — 179€</div>
 
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Via Rocca, 11 — Trezzo sull'Adda</p>
     <h1>Hair Club</h1>
     <p class="tagline">Il salone di Ombretta Cammarata, dove ogni taglio parte da un'idea precisa.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:0290922337">Chiama e prenota</a>
+      <a class="btn btn-ghost" href="https://instagram.com/hairclubtrezzo" target="_blank" rel="noopener">Instagram @hairclubtrezzo</a>
+    </div>
     <span class="hours-pill">Oggi: <b>aperto</b> · 9:00 – 19:00</span>
   </div>
 </header>
@@ -80,6 +95,7 @@
   <div class="wrap">
     <h2>Il salone</h2>
     <p>Un salone da donna nel cuore di Trezzo sull'Adda, dove Ombretta e il suo staff seguono ogni cliente con attenzione, dal taglio al colore, senza fretta.</p>
+    <div class="social-row">Segui i lavori più recenti su <a href="https://instagram.com/hairclubtrezzo" target="_blank" rel="noopener">Instagram →</a></div>
   </div>
 </section>
 
@@ -119,6 +135,15 @@
   </div>
 </section>
 
+<section class="dove">
+  <div class="wrap">
+    <h2>Dove siamo</h2>
+    <div class="map-frame">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Via%20Rocca%2011%20Trezzo%20sull%27Adda&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <h2>Prenota</h2>
@@ -126,6 +151,6 @@
       <div><strong>Indirizzo</strong> — Via Rocca, 11, Trezzo sull'Adda</div>
       <div><strong>Telefono</strong> — 02 9092237</div>
     </div>
-    <p class="demo-note">Versione Base: informazioni pubbliche, hosting su infrastruttura nefaSto. Se nefaSto termina l'attività, il codice sorgente viene comunque consegnato su richiesta.</p>
+    <p class="demo-note">Versione Standard: rispetto alla base aggiunge pulsante di chiamata diretta, collegamento al vostro Instagram e mappa. Dominio personalizzato non incluso (facoltativo, ~15€/anno a parte).</p>
   </div>
 </footer>

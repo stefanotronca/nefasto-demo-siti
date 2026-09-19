@@ -1,77 +1,150 @@
-<title>Hair Club Trezzo — Base</title>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Club — Parrucchiere a Trezzo sull'Adda</title>
+<meta name="description" content="Hair Club, il salone di Ombretta Cammarata a Trezzo sull'Adda: taglio, colore e trattamenti. Via Rocca 11. Prenota al 02 9092237.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Hair Club — Trezzo sull'Adda">
+<meta property="og:description" content="Il salone di Ombretta Cammarata: taglio, colore, trattamenti. Via Rocca 11, Trezzo sull'Adda.">
+<meta property="og:type" content="business.business">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Manrope:wght@400;500;600&display=swap">
 <style>
   :root{
-    --bg:#f6eeea; --surface:#fffbf9; --ink:#241b1d; --ink-soft:#6b5a5c;
-    --plum:#241b1d; --rose:#a85d6a; --rose-soft:#e7c3c9;
-    --border:#e6d5d2;
+    --bg:#f4f2ec; --surface:#ffffff; --ink:#2a2925; --ink-soft:#65625a;
+    --dark:#1c1b18; --accent:#a08862; --accent-ink:#2a2418;
+    --border:#e2ddd0;
     --font-display:'Bodoni Moda', Georgia, serif;
     --font-body:'Manrope', 'Helvetica Neue', Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
-      --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
-      --border:#3a2629;
+      --bg:#15140f; --surface:#1e1c17; --ink:#eeece4; --ink-soft:#bab5a5;
+      --dark:#0f0e0b; --accent:#c7a875; --accent-ink:#1c1810;
+      --border:#332f26;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#181113; --surface:#211719; --ink:#f3e6e3; --ink-soft:#c7aeae;
-    --plum:#100b0c; --rose:#d98a97; --rose-soft:#5c3339;
-    --border:#3a2629;
+    --bg:#15140f; --surface:#1e1c17; --ink:#eeece4; --ink-soft:#bab5a5;
+    --dark:#0f0e0b; --accent:#c7a875; --accent-ink:#1c1810;
+    --border:#332f26;
   }
   *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
-  .wrap{max-width:760px; margin:0 auto; padding:0 20px;}
-  .tier-flag{
-    background:var(--border); color:var(--ink); text-align:center; font-size:12px;
-    font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:8px;
+  .wrap{max-width:820px; margin:0 auto; padding:0 20px;}
+  nav.top{
+    position:sticky; top:0; z-index:20; background:var(--dark);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 20px;
   }
-  header.hero{background:var(--plum); padding-block:56px 44px;}
+  nav.top .brand{font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:#f4ecd8;}
+  nav.top a.btn-book{
+    background:var(--accent); color:var(--accent-ink); font-weight:600; font-size:0.85rem;
+    padding:9px 18px; border-radius:999px; text-decoration:none;
+  }
+  header.hero{
+    position:relative; min-height:78vh; display:flex; align-items:flex-end;
+    background: linear-gradient(0deg, rgba(15,14,11,0.88) 10%, rgba(15,14,11,0.35) 55%, rgba(15,14,11,0.15) 100%),
+      url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80') center/cover no-repeat;
+  }
+  header.hero .inner{padding-block:60px 44px; position:relative;}
   header.hero .eyebrow{
     font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
-    color:var(--rose); font-weight:600; margin:0 0 12px;
+    color:var(--accent); font-weight:600; margin:0 0 12px;
   }
   header.hero h1{
     font-family:var(--font-display); font-weight:500; font-style:italic;
-    font-size:clamp(2.3rem, 6.5vw, 3.6rem); margin:0 0 14px; color:#f7ece9;
+    font-size:clamp(2.4rem, 7vw, 3.8rem); margin:0 0 14px; color:#faf6ec;
     text-wrap:balance;
   }
-  header.hero p.tagline{font-size:1.05rem; margin:0 0 22px; color:var(--rose-soft); max-width:44ch;}
+  header.hero p.tagline{font-size:1.08rem; margin:0 0 24px; color:#e7e1d0; max-width:44ch;}
+  .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px;
+    font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent); color:var(--accent-ink);}
+  .btn-ghost{background:rgba(255,255,255,0.08); color:#f4f0e4; border-color:rgba(244,240,228,0.35);}
   .hours-pill{
     display:inline-flex; gap:10px; align-items:baseline;
-    background:rgba(247,236,233,0.08); border:1px solid rgba(247,236,233,0.22);
-    padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f0dcd9;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22);
+    padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f4f0e4;
   }
-  .hours-pill b{color:var(--rose); font-weight:600;}
-  section{padding-block:44px;}
-  section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
+  .hours-pill b{color:var(--accent); font-weight:600;}
+  section{padding-block:48px;}
   h2{
-    font-family:var(--font-display); font-weight:500; font-size:1.75rem;
+    font-family:var(--font-display); font-weight:500; font-size:1.8rem;
     margin:0 0 18px; color:var(--ink); text-wrap:balance;
   }
-  .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  .service{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px 16px;}
-  .service .mark{font-family:var(--font-display); font-style:italic; font-size:1.5rem; color:var(--rose); display:block; margin-bottom:6px;}
-  .service h3{font-size:1rem; margin:0 0 6px; font-weight:600;}
-  .service p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+  section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
+  .service-section{
+    display:grid; grid-template-columns:1fr 1.1fr; gap:32px; align-items:center;
+  }
+  .service-photo{
+    aspect-ratio:4/5; border-radius:12px; overflow:hidden;
+  }
+  .service-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .services{display:grid; gap:14px;}
+  .service{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .service .mark{font-family:var(--font-display); font-style:italic; font-size:1.3rem; color:var(--accent); margin-right:8px;}
+  .service h3{display:inline; font-size:1.05rem; font-weight:600;}
+  .service p{font-size:0.92rem; color:var(--ink-soft); margin:6px 0 0;}
   table.orari{border-collapse:collapse; width:100%; max-width:440px; font-variant-numeric:tabular-nums;}
   table.orari td{padding:9px 0; border-bottom:1px solid var(--border); font-size:0.95rem;}
   table.orari td:last-child{text-align:right; color:var(--ink-soft);}
-  footer{background:var(--surface); border-top:1px solid var(--border); padding-block:32px 40px;}
-  footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; color:var(--ink-soft); margin-bottom:20px;}
-  footer .contact-grid strong{color:var(--ink); font-weight:600;}
-  .demo-note{font-size:0.78rem; color:var(--ink-soft); border-top:1px dashed var(--border); padding-top:16px; margin-top:20px;}
-  @media (max-width:520px){.services{grid-template-columns:1fr;}}
+  .map-frame{border:1px solid var(--border); border-radius:12px; overflow:hidden; max-width:100%;}
+  .map-frame iframe{display:block; width:100%; height:280px; border:0;}
+  .map-consent{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:32px 20px; text-align:center; color:var(--ink-soft); font-size:0.9rem;
+  }
+  .map-consent button{
+    margin-top:12px; background:var(--accent); color:var(--accent-ink); border:none;
+    padding:9px 18px; border-radius:999px; font-weight:600; font-size:0.85rem; cursor:pointer;
+  }
+  footer{background:var(--dark); color:#d8d2c0; padding-block:36px 30px;}
+  footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; margin-bottom:18px;}
+  footer .contact-grid strong{color:#f4ecd8; font-weight:600;}
+  footer a{color:var(--accent);}
+  .demo-note{font-size:0.76rem; color:#a39c86; border-top:1px solid #35322a; padding-top:16px; margin-top:20px;}
+  #cookie-banner{
+    position:fixed; left:16px; right:16px; bottom:16px; z-index:50;
+    max-width:560px; margin:0 auto; background:var(--dark); color:#f4f0e4;
+    border-radius:12px; padding:18px 20px; font-size:0.85rem; box-shadow:0 8px 30px rgba(0,0,0,0.3);
+  }
+  #cookie-banner p{margin:0 0 12px;}
+  #cookie-banner a{color:var(--accent);}
+  .cookie-actions{display:flex; gap:10px; flex-wrap:wrap;}
+  .cookie-actions button{
+    border:none; border-radius:999px; padding:9px 16px; font-size:0.82rem; font-weight:600; cursor:pointer;
+  }
+  #cookie-accept{background:var(--accent); color:var(--accent-ink);}
+  #cookie-reject{background:transparent; color:#f4f0e4; border:1px solid rgba(244,240,228,0.35);}
+  [hidden]{display:none!important;}
+  @media (max-width:640px){
+    .service-section{grid-template-columns:1fr;}
+    .service-photo{aspect-ratio:16/9;}
+  }
 </style>
+</head>
+<body>
 
-<div class="tier-flag">Versione Base — 100€</div>
+<nav class="top">
+  <span class="brand">Hair Club</span>
+  <a class="btn-book" href="tel:0290922337">Prenota</a>
+</nav>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="wrap inner">
     <p class="eyebrow">Via Rocca, 11 — Trezzo sull'Adda</p>
     <h1>Hair Club</h1>
     <p class="tagline">Il salone di Ombretta Cammarata, dove ogni taglio parte da un'idea precisa.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:0290922337">Chiama e prenota</a>
+      <a class="btn btn-ghost" href="https://instagram.com/hairclubtrezzo" target="_blank" rel="noopener">Instagram</a>
+    </div>
     <span class="hours-pill">Oggi: <b>aperto</b> · 9:00 – 19:00</span>
   </div>
 </header>
@@ -86,21 +159,14 @@
 <section class="offerte">
   <div class="wrap">
     <h2>Servizi</h2>
-    <div class="services">
-      <div class="service">
-        <span class="mark">✂</span>
-        <h3>Taglio e piega</h3>
-        <p>Su misura per te, dal consulto alla messa in piega finale.</p>
+    <div class="service-section">
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80" alt="Piega dal vivo nel salone" loading="lazy">
       </div>
-      <div class="service">
-        <span class="mark">◐</span>
-        <h3>Colore</h3>
-        <p>Colorazione, schiariture e trattamenti su misura per ogni base.</p>
-      </div>
-      <div class="service">
-        <span class="mark">✦</span>
-        <h3>Trattamenti</h3>
-        <p>Ricostruzione e cura per capelli sani e luminosi.</p>
+      <div class="services">
+        <div class="service"><span class="mark">✂</span><h3>Taglio e piega</h3><p>Su misura per te, dal consulto alla messa in piega finale.</p></div>
+        <div class="service"><span class="mark">◐</span><h3>Colore</h3><p>Colorazione, schiariture e trattamenti su misura per ogni base.</p></div>
+        <div class="service"><span class="mark">✦</span><h3>Trattamenti</h3><p>Ricostruzione e cura per capelli sani e luminosi.</p></div>
       </div>
     </div>
   </div>
@@ -119,13 +185,64 @@
   </div>
 </section>
 
+<section class="dove">
+  <div class="wrap">
+    <h2>Dove siamo</h2>
+    <div id="map-consent" class="map-consent">
+      <p>Qui sotto ci sarebbe la mappa di Google — richiede il tuo consenso ai cookie per essere mostrata.</p>
+      <button id="map-show-btn">Mostra la mappa</button>
+    </div>
+    <div id="map-frame" class="map-frame" hidden>
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Via%20Rocca%2011%20Trezzo%20sull%27Adda&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <h2>Prenota</h2>
+    <h2 style="color:#faf6ec">Prenota</h2>
     <div class="contact-grid">
       <div><strong>Indirizzo</strong> — Via Rocca, 11, Trezzo sull'Adda</div>
       <div><strong>Telefono</strong> — 02 9092237</div>
     </div>
-    <p class="demo-note">Versione Base: informazioni pubbliche, hosting su infrastruttura nefaSto. Se nefaSto termina l'attività, il codice sorgente viene comunque consegnato su richiesta.</p>
+    <p class="demo-note">Sito dimostrativo creato da nefaSto (nefasto.vercel.app). Foto di repertorio, verranno sostituite con le vostre se disponibili. <a href="#" id="cookie-policy-link">Informativa cookie</a>.</p>
+    <p id="cookie-policy-text" class="demo-note" hidden>Questo sito usa solo un cookie tecnico necessario se accetti di visualizzare la mappa di Google (che imposta i propri cookie di terze parti). Nessun cookie di profilazione o tracciamento pubblicitario è presente.</p>
   </div>
 </footer>
+
+<div id="cookie-banner" hidden>
+  <p>Usiamo un cookie tecnico solo se scegli di visualizzare la mappa (Google). Nessun tracciamento pubblicitario.</p>
+  <div class="cookie-actions">
+    <button id="cookie-accept">Accetta</button>
+    <button id="cookie-reject">Rifiuta</button>
+  </div>
+</div>
+
+<script>
+  var banner = document.getElementById('cookie-banner');
+  var seen = false;
+  try { seen = localStorage.getItem('nefasto_cookie_choice'); } catch(e) {}
+  if (!seen) { banner.hidden = false; }
+
+  function setChoice(v){
+    try { localStorage.setItem('nefasto_cookie_choice', v); } catch(e) {}
+    banner.hidden = true;
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function(){ setChoice('accepted'); });
+  document.getElementById('cookie-reject').addEventListener('click', function(){ setChoice('rejected'); });
+
+  document.getElementById('map-show-btn').addEventListener('click', function(){
+    document.getElementById('map-consent').hidden = true;
+    document.getElementById('map-frame').hidden = false;
+    setChoice('accepted');
+  });
+
+  document.getElementById('cookie-policy-link').addEventListener('click', function(e){
+    e.preventDefault();
+    var t = document.getElementById('cookie-policy-text');
+    t.hidden = !t.hidden;
+  });
+</script>
+
+</body>
+</html>

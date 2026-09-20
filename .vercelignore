@@ -1,3 +1,12 @@
 # Contenuti privati: non devono mai essere pubblicati/deployati.
 # Dati reali di terzi (es. Hair Club, Trezzo sull'Adda) in attesa di consenso.
 _privato/
+
+# Documenti interni di lavoro: contengono dati reali di lead e note legali.
+# Non devono essere serviti dal sito pubblico.
+*.md
+reports/
+outreach/
+ricerche/
+richieste/
+.claude/

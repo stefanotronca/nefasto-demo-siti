@@ -12,5 +12,6 @@ Prima di segnalare un lead come valido:
 - Verifica se il sito esistente (se citato da qualche fonte) risponde davvero — non fidarti solo del fatto che un URL compaia in una ricerca, controllane lo stato reale.
 - Non inventare mai dati mancanti (orari, prezzi, servizi) — se non li trovi, segnalali come mancanti, li chiederà Davide o li ometterà dal sito.
 - Preferisci attività con informazioni pubbliche sufficienti (Google Maps/Business, elenchi locali) a quelle su cui devi indovinare.
+- Specifica sempre a cosa serve il lead: outreach verso quell'attività specifica (dati reali, il titolare non sa ancora di noi) oppure spunto per un esempio generico da mostrare sul sito Vetrina stesso — a valle vengono trattati in modo diverso. I dati reali raccolti per un lead di outreach non vanno mai proposti come esempio pubblico generico sul sito Vetrina (home, portfolio): per quello serve un nome fittizio (es. "Nefasto" o variante chiaramente non reale), mai il nome vero di un'azienda trovata in ricerca.
 
-Consegna ogni lead ad Andrea con: nome attività, categoria, indirizzo, contatti, stato del sito attuale (assente/non funzionante/obsoleto), e fonte dei dati raccolti.
+Consegna ogni lead ad Andrea con: nome attività, categoria, indirizzo, contatti, stato del sito attuale (assente/non funzionante/obsoleto), fonte dei dati raccolti, e destinazione del lead (outreach a un prospect reale vs esempio pubblico generico per Vetrina).

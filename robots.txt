@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nefasto-demo-siti-s5wq.vercel.app/sitemap.xml

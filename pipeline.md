@@ -14,6 +14,18 @@ Stato di ogni contatto/lead, aggiornato da Matteo (direttore operativo) e dal te
 - `chiuso positivo` — cliente ha pagato, sito consegnato
 - `chiuso negativo` — non interessato o nessuna risposta dopo 3 tentativi
 
+## Disposizioni operative assegnate (Matteo, 20/09/2026)
+
+Stato reale: pipeline ferma a zero (0 lead, 0 contatti, 0 incassi). Nessuna azione produttiva verso un cliente vero è ancora partita, nonostante homepage v2 pubblicata e regole legali di Chiara integrate nei prompt di Marco/Luca. Stefano ha chiesto di sbloccare subito. Ordine di priorità:
+
+| # | Assegnato a | Azione | Scadenza | Stato |
+|---|---|---|---|---|
+| 1 | Stefano | Confermare per iscritto lo sblocco: anticipare la milestone "Avvio outreach reale" da 05/10/2026 a subito, dato che chiede di partire ora. Senza questa conferma esplicita resta valida la decisione precedente di non contattare nessuno. | oggi 20/09 | da confermare |
+| 2 | Marco | Consegnare i primi 10 lead reali (non test): nome attività, comune, email/telefono di contatto. Vanno inseriti nella tabella pipeline in cima a questo file. | domani 21/09 (fine giornata) | assegnato |
+| 3 | Andrea | Sistemare i pulsanti "mailto" in homepage: aggiungere fallback visibile (indirizzo email in chiaro, copiabile con un click) per chi non ha un client email predefinito sul dispositivo. | oggi 20/09 | assegnato |
+| 4 | Chiara | Dare via libera scritto (go/no-go) sui template email che Giulia userà per il primo invio reale, verificando che rispettino le regole già integrate nei prompt di Marco/Luca. | oggi 20/09 | assegnato |
+| 5 | Giulia | Appena Marco consegna i lead (azione #2) e Chiara dà il via libera (azione #4), inviare le prime email/DM reali ai primi contatti e aggiornare questo file con data di invio e stato "contattato". | domani 21/09, subito dopo #2 e #4 | in attesa dei prerequisiti |
+
 ## Metriche correnti
 - Lead trovati: 0 (reali)
 - Contattati: 0 (reali)

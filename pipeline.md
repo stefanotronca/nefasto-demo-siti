@@ -36,13 +36,15 @@ Tutti e 10 sono destinati a **outreach verso l'attività specifica** (dati reali
 
 Stato reale: pipeline ferma a zero (0 lead, 0 contatti, 0 incassi). Nessuna azione produttiva verso un cliente vero è ancora partita, nonostante homepage v2 pubblicata e regole legali di Chiara integrate nei prompt di Marco/Luca. Stefano ha chiesto di sbloccare subito. Ordine di priorità:
 
+**Aggiornamento scadenze (Matteo, 20/09/2026):** Stefano ha comunicato che tutte le scadenze ancora aperte (non completate) vengono spostate di 48 ore ciascuna rispetto alla data indicata. Le voci già segnate come "fatto"/"RISOLTO" restano invariate con la loro data di completamento reale.
+
 | # | Assegnato a | Azione | Scadenza | Stato |
 |---|---|---|---|---|
-| 1 | Stefano | Confermare per iscritto lo sblocco: anticipare la milestone "Avvio outreach reale" da 05/10/2026 a subito, dato che chiede di partire ora. Senza questa conferma esplicita resta valida la decisione precedente di non contattare nessuno. | oggi 20/09 | da confermare |
+| 1 | Stefano | Confermare per iscritto lo sblocco: anticipare la milestone "Avvio outreach reale" da 05/10/2026 a subito, dato che chiede di partire ora. Senza questa conferma esplicita resta valida la decisione precedente di non contattare nessuno. | ~~oggi 20/09~~ → **22/09** (spostata 48h il 20/09) | da confermare |
 | 2 | Marco | Consegnare i primi 10 lead reali (non test): nome attività, comune, email/telefono di contatto. Vanno inseriti nella tabella pipeline in cima a questo file. | domani 21/09 (fine giornata) | **fatto 20/09 — 10 lead consegnati (v. tabella sopra e nota metodologica)** |
-| 3 | Andrea | Sistemare i pulsanti "mailto" in homepage: aggiungere fallback visibile (indirizzo email in chiaro, copiabile con un click) per chi non ha un client email predefinito sul dispositivo. | oggi 20/09 | assegnato |
-| 4 | Chiara | Dare via libera scritto (go/no-go) sui template email che Giulia userà per il primo invio reale, verificando che rispettino le regole già integrate nei prompt di Marco/Luca. | oggi 20/09 | assegnato |
-| 5 | Giulia | Appena Marco consegna i lead (azione #2) e Chiara dà il via libera (azione #4), inviare le prime email/DM reali ai primi contatti e aggiornare questo file con data di invio e stato "contattato". | domani 21/09, subito dopo #2 e #4 | prerequisito #2 soddisfatto (10 lead sopra); in attesa di #4 |
+| 3 | Andrea | Sistemare i pulsanti "mailto" in homepage: aggiungere fallback visibile (indirizzo email in chiaro, copiabile con un click) per chi non ha un client email predefinito sul dispositivo. | ~~oggi 20/09~~ → **22/09** (era già scaduta; spostata 48h il 20/09) | assegnato |
+| 4 | Chiara | Dare via libera scritto (go/no-go) sui template email che Giulia userà per il primo invio reale, verificando che rispettino le regole già integrate nei prompt di Marco/Luca. | ~~oggi 20/09~~ → **22/09** (spostata 48h il 20/09) | assegnato |
+| 5 | Giulia | Appena Marco consegna i lead (azione #2) e Chiara dà il via libera (azione #4), inviare le prime email/DM reali ai primi contatti e aggiornare questo file con data di invio e stato "contattato". | ~~domani 21/09~~ → **23/09**, subito dopo #2 e #4 (spostata 48h il 20/09) | prerequisito #2 soddisfatto (10 lead sopra); in attesa di #4 |
 
 ## Metriche correnti
 - Lead trovati: 10 (reali)
@@ -50,18 +52,18 @@ Stato reale: pipeline ferma a zero (0 lead, 0 contatti, 0 incassi). Nessuna azio
 - Chiusi positivi: 0
 - Capitale incassato: 0€
 
-## Milestone e date target (piano operativo proposto il 20/09/2026, riprogrammato il 20/09/2026 su decisione di Stefano — da confermare)
+## Milestone e date target (piano operativo proposto il 20/09/2026, riprogrammato il 20/09/2026 su decisione di Stefano — da confermare; ulteriore spostamento di 48h il 20/09/2026 su decisione di Stefano)
 Nota: sono target di pianificazione, non dati consuntivi. Vanno aggiornati con le date reali quando gli eventi accadono.
 
-Decisione di Stefano (20/09/2026): nessun contatto reale per ora, l'azienda è ancora in fase di sviluppo interno. Outreach non parte finché non siamo operativi. Tutte le milestone sotto sono state spostate di 7 giorni rispetto al piano originale, mantenendo invariati gli intervalli relativi tra loro.
+Decisione di Stefano (20/09/2026): nessun contatto reale per ora, l'azienda è ancora in fase di sviluppo interno. Outreach non parte finché non siamo operativi. Tutte le milestone sotto sono state spostate di 7 giorni rispetto al piano originale, mantenendo invariati gli intervalli relativi tra loro. Aggiornamento (Stefano, 20/09/2026): ulteriore spostamento di 48 ore su tutte le scadenze ancora aperte, sempre mantenendo invariati gli intervalli relativi tra le milestone.
 
 | Milestone | Target | Criterio di completamento |
 |---|---|---|
-| Avvio outreach reale | entro 05/10/2026 | Marco consegna 30-40 lead reali; Giulia invia i primi contatti |
-| Vetrina "operativa" | entro 12/10/2026 | Primi 30+ lead reali contattati (non test) |
-| Follow-up 1 completato | entro 15/10/2026 | Follow-up giorno 4-5 inviato su tutti i contatti del primo batch |
-| Follow-up 2 completato | entro 21/10/2026 | Follow-up giorno 10-12 inviato su tutti i contatti del primo batch |
-| Primo incasso reale | stima 22/10-01/11/2026 | Primo pagamento cliente ricevuto, sito in produzione/consegnato |
+| Avvio outreach reale | entro 07/10/2026 (era 05/10, +48h) | Marco consegna 30-40 lead reali; Giulia invia i primi contatti |
+| Vetrina "operativa" | entro 14/10/2026 (era 12/10, +48h) | Primi 30+ lead reali contattati (non test) |
+| Follow-up 1 completato | entro 17/10/2026 (era 15/10, +48h) | Follow-up giorno 4-5 inviato su tutti i contatti del primo batch |
+| Follow-up 2 completato | entro 23/10/2026 (era 21/10, +48h) | Follow-up giorno 10-12 inviato su tutti i contatti del primo batch |
+| Primo incasso reale | stima 24/10-03/11/2026 (era 22/10-01/11, +48h) | Primo pagamento cliente ricevuto, sito in produzione/consegnato |
 | Obiettivo 3 mesi (fine 12/2026) | 8-10 clienti chiusi | ~1.000-1.800€ incassati cumulati (pacchetti una tantum) |
 | Obiettivo 6 mesi (fine 03/2027) | 20-25 clienti chiusi cumulati | ~3.000-4.500€ incassati cumulati; primo ciclo di referral attivo |
 
@@ -71,11 +73,13 @@ Ipotesi usate: tasso di risposta cold outreach B2B locale 5-15% su 30-40 contatt
 
 Contesto: Stefano ha bloccato l'outreach dicendo che "la qualità è di bassa leva" e che si parte solo a "livello ottimo". Questo criterio, com'è formulato, non è verificabile né ha una fine. Di seguito la traduzione in voci concrete, verificate una per una sullo stato reale del codice (index.html, i tre tier demo, sitemap.txt/robots.txt). "Ottimo" resta un giudizio finale di Stefano: qui sotto c'è solo l'elenco di cosa risulta fatto e cosa no, con azione e scadenza per ogni voce non a posto.
 
+**Aggiornamento scadenze (Stefano, 20/09/2026):** tutte le scadenze ancora aperte (non "fatto"/"RISOLTO") sono state spostate di 48 ore ciascuna. Le voci già completate (A3, A4) restano invariate con la loro data di completamento reale.
+
 ### A. Sito Vetrina (index.html)
 | # | Voce | Stato reale | Azione | Assegnato a | Scadenza |
 |---|---|---|---|---|---|
-| A1 | Privacy/cookie policy | MANCANTE — index.html non ha alcun link privacy, nessun cookie banner, pur caricando Google Fonts (trasferimento IP a terzi) | Scrivere testo minimo pagina `/privacy` (titolare del trattamento, dati raccolti via mailto, uso Google Fonts) e linkarla in footer | Chiara (testo) + Luca (pubblicazione/link) | 22/09 |
-| A2 | Identità legale dichiarata | MANCANTE — nessuna ragione sociale, P.IVA o forma giuridica indicata; non è chiaro se dichiararsi "azienda" sia corretto | Paolo conferma per iscritto lo stato legale reale del progetto (esiste P.IVA sì/no); in base alla risposta, Davide adatta il testo (es. "progetto" invece di "azienda" se non c'è ancora struttura formale) | Paolo → Davide | 22/09 |
+| A1 | Privacy/cookie policy | MANCANTE — index.html non ha alcun link privacy, nessun cookie banner, pur caricando Google Fonts (trasferimento IP a terzi) | Scrivere testo minimo pagina `/privacy` (titolare del trattamento, dati raccolti via mailto, uso Google Fonts) e linkarla in footer | Chiara (testo) + Luca (pubblicazione/link) | ~~22/09~~ → **24/09** (+48h il 20/09) |
+| A2 | Identità legale dichiarata | MANCANTE — nessuna ragione sociale, P.IVA o forma giuridica indicata; non è chiaro se dichiararsi "azienda" sia corretto | Paolo conferma per iscritto lo stato legale reale del progetto (esiste P.IVA sì/no); in base alla risposta, Davide adatta il testo (es. "progetto" invece di "azienda" se non c'è ancora struttura formale) | Paolo → Davide | ~~22/09~~ → **24/09** (+48h il 20/09) |
 | A3 | Cartelle hairclub/, hairclub-standard/, hairclub-premium/ ancora presenti sul repo con dati di un'azienda reale (nome, indirizzo, telefono, Instagram di Hair Club/Trezzo sull'Adda), non linkate dall'homepage ma raggiungibili via URL diretto e ancora elencate in sitemap.xml | RISOLTO (20/09) — cartelle spostate in `_privato/` (fuori da qualunque link pubblico) ed escluse dal deploy Vercel via `.vercelignore`; verificato 404 pubblico dopo il deploy | Restano in git history/locale per un eventuale uso futuro con consenso di Hair Club | Luca | fatto 20/09 |
 | A4 | sitemap.xml disallineata: contiene solo i vecchi URL hairclub, non gli URL reali attuali (nefasto-parrucchieri e i suoi tier, home) | RISOLTO (20/09) — sitemap.xml riscritta: contiene solo la home (unica pagina `index,follow`); /esempi/ e le pagine nefasto-parrucchieri* restano fuori perché sono tutte `noindex,follow`, coerente con la policy di Valentina | nessuna azione | Luca | fatto 20/09 |
 
@@ -85,19 +89,19 @@ Contesto: Stefano ha bloccato l'outreach dicendo che "la qualità è di bassa le
 | B1 | Disclaimer "esempio di fantasia" | A POSTO — presente su tutti e 3 i tier e nella pagina /esempi/ | nessuna azione | — | — |
 | B2 | noindex sulle pagine demo | A POSTO — tutti i 6 file hanno `meta robots noindex` | nessuna azione | — | — |
 | B3 | Cookie banner sulla demo | A POSTO su Nefasto Parrucchieri (banner + toggle informativa) | nessuna azione | — | — |
-| B4 | Contenuto blog demo ("piega-che-dura") | Non ancora verificato da un occhio esterno se il testo è pubblicabile a un cliente vero o resta solo dimostrativo interno | Elena verifica il testo dell'articolo e conferma se è mostrabile o va segnato più esplicitamente come placeholder | Elena | 23/09 |
+| B4 | Contenuto blog demo ("piega-che-dura") | Non ancora verificato da un occhio esterno se il testo è pubblicabile a un cliente vero o resta solo dimostrativo interno | Elena verifica il testo dell'articolo e conferma se è mostrabile o va segnato più esplicitamente come placeholder | Elena | ~~23/09~~ → **25/09** (+48h il 20/09) |
 
 ### C. Materiali di outreach (email di Giulia)
 | # | Voce | Stato reale | Azione | Assegnato a | Scadenza |
 |---|---|---|---|---|---|
-| C1 | Template email primo contatto | NON ESISTE ANCORA nessun file/testo di template — Giulia ha solo un piano, zero bozze scritte | Scrivere almeno 1 template di prima email reale, da sottoporre a Chiara per il go/no-go già richiesto in azione #4 sopra | Giulia | 21/09 |
-| C2 | Opt-out esplicito nel template | Da verificare quando C1 esiste | Controllare che ogni bozza includa una frase di opt-out chiaro ("non mi interessa, non scrivetemi più") | Giulia (scrittura) + Chiara (verifica) | 22/09 |
+| C1 | Template email primo contatto | NON ESISTE ANCORA nessun file/testo di template — Giulia ha solo un piano, zero bozze scritte | Scrivere almeno 1 template di prima email reale, da sottoporre a Chiara per il go/no-go già richiesto in azione #4 sopra | Giulia | ~~21/09~~ → **23/09** (+48h il 20/09) |
+| C2 | Opt-out esplicito nel template | Da verificare quando C1 esiste | Controllare che ogni bozza includa una frase di opt-out chiaro ("non mi interessa, non scrivetemi più") | Giulia (scrittura) + Chiara (verifica) | ~~22/09~~ → **24/09** (+48h il 20/09) |
 
 ### D. Coerenza di brand
 | # | Voce | Stato reale | Azione | Assegnato a | Scadenza |
 |---|---|---|---|---|---|
-| D1 | Palette/font coerenti tra homepage e demo | Homepage usa Fraunces/IBM Plex Sans su blu/ink scuro; le demo Nefasto Parrucchieri usano Bodoni Moda/Manrope su beige/oro — stili volutamente diversi (uno è brand Vetrina, l'altro è il sito del cliente-esempio), non è un errore ma va confermato che sia intenzionale | Sofia conferma per iscritto che la differenza di stile tra "sito Vetrina" e "sito del cliente demo" è voluta e documentata, non un'incoerenza | Sofia | 23/09 |
-| D2 | Fallback mailto senza client email (azione #3 già assegnata il 20/09) | ASSEGNATA, non ancora confermata completata | Confermare completamento o segnalare blocco | Andrea | 20/09 (già in scadenza) |
+| D1 | Palette/font coerenti tra homepage e demo | Homepage usa Fraunces/IBM Plex Sans su blu/ink scuro; le demo Nefasto Parrucchieri usano Bodoni Moda/Manrope su beige/oro — stili volutamente diversi (uno è brand Vetrina, l'altro è il sito del cliente-esempio), non è un errore ma va confermato che sia intenzionale | Sofia conferma per iscritto che la differenza di stile tra "sito Vetrina" e "sito del cliente demo" è voluta e documentata, non un'incoerenza | Sofia | ~~23/09~~ → **25/09** (+48h il 20/09) |
+| D2 | Fallback mailto senza client email (azione #3 già assegnata il 20/09) | ASSEGNATA, non ancora confermata completata | Confermare completamento o segnalare blocco | Andrea | ~~20/09 (già in scadenza)~~ → **22/09** (+48h il 20/09) |
 
 ## Stima tempi
-Se tutte le voci sopra (A1-D2, 10 azioni) vengono chiuse rispettando le scadenze indicate, il lavoro tecnico concreto richiede realisticamente **3-4 giorni lavorativi** (20-24/09), assumendo nessun nuovo problema scoperto durante l'esecuzione. Questa è una stima sul lavoro necessario per portare il sito e i materiali a uno stato verificabile e senza rischi noti — non è una garanzia che Stefano lo giudicherà "ottimo": quel giudizio resta suo. Il compito di Matteo qui finisce nel rendere la lista concreta e nel verificare, voce per voce, quando ogni azione risulta davvero completata.
+Se tutte le voci sopra (A1-D2, 10 azioni) vengono chiuse rispettando le scadenze indicate, il lavoro tecnico concreto richiede realisticamente **3-4 giorni lavorativi**, assumendo nessun nuovo problema scoperto durante l'esecuzione. Aggiornamento (20/09/2026): a seguito dello spostamento di 48h deciso da Stefano su tutte le scadenze ancora aperte, la finestra si sposta da 20-24/09 a **20/09-26/09** (le date di completamento già avvenute — A3, A4, azione #2 di Marco — restano fissate al 20/09). Questa è una stima sul lavoro necessario per portare il sito e i materiali a uno stato verificabile e senza rischi noti — non è una garanzia che Stefano lo giudicherà "ottimo": quel giudizio resta suo. Il compito di Matteo qui finisce nel rendere la lista concreta e nel verificare, voce per voce, quando ogni azione risulta davvero completata.

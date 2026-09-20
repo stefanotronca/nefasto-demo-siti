@@ -5,6 +5,24 @@ Stato di ogni contatto/lead, aggiornato da Matteo (direttore operativo) e dal te
 | Attività | Canale | Contattato il | Ultimo follow-up | Stato | Pacchetto proposto | Note |
 |---|---|---|---|---|---|---|
 | Hair Club (Trezzo sull'Adda) | Email (test) | - | - | test interno, non un vero lead | Base/Standard/Premium | Usato per validare email ed email-tier prima del lancio reale |
+| Parrucchiere Gianni (Vimercate, MB) | da definire | - | - | da contattare | da definire | Parrucchiere donna. Via Pierino Colombo 12, Vimercate. Tel 039 669696, email parrucchieregianni@globelife.com. Orari: Mar-Ven 8:30-12/13:30-18, Mer 8:30-12/14:30-21, Sab 8:30-16:30, chiuso Lun/Dom. Sito attuale: assente (nessuna fonte lo riporta). Fonte: PagineGialle, PagineBianche, aziende.virgilio.it. Destinazione: outreach reale (lead di Marco, dati reali — non usare come esempio pubblico Vetrina). |
+| L'Idraulica di Musarra Amato Biagio (Cologno Monzese, MI) | da definire | - | - | da contattare | da definire | Idraulico. Via Corridoni Filippo 30, Cologno Monzese. Tel 02 2543880 / 335 5220852 (anche WhatsApp). Orari: non trovati (mancante, da chiedere). Sito attuale: assente. Fonte: PagineGialle. Destinazione: outreach reale. |
+| Sartoria & Merceria Aiello (Monza, MB) | da definire | - | - | da contattare | da definire | Sartoria/merceria. Via Solferino 9, Monza. Tel 327 197 3357. Orari: Lun-Sab 9-13/14:30-19, chiuso Dom. Sito attuale: assente. Fonte: Sartist.it, PagineBianche, TuttaMonza. Destinazione: outreach reale. |
+| Estetica Mami di Lazzaroni Margherita & C. (Concorezzo, MB) | da definire | - | - | da contattare | da definire | Centro estetico. Via Girotti Don Antonio 28, Concorezzo. Tel 039 648496 / 339 379 2168. Orari: Mar-Ven 9-20, Sab 9-14, chiuso Lun/Dom (dato datato aprile 2023, da riconfermare prima di scrivere orari sul sito). Sito attuale: assente, solo pagina Facebook. Fonte: PagineBianche, PagineGialle, Cylex, Trova-Aperto. Destinazione: outreach reale. |
+| Elettrosat (Lissone, MB) | da definire | - | - | da contattare | da definire | Elettricista/antenne/condizionatori. Via Giacomo Matteotti 92, Lissone. Tel 349 3517906 (anche WhatsApp). Orari: non trovati (mancante). Sito attuale: assente. Fonte: PagineGialle, PagineBianche, PGCasa. Destinazione: outreach reale. |
+| Bar "Al Solito Posto" (Bellusco, MB) | da definire | - | - | da contattare | da definire | Bar/tabaccheria. Indirizzo Via Dante, Bellusco — attenzione: le fonti discordano tra civico 18 (Aziendit) e civico 21 (IndaBox), da verificare per telefono prima di scrivere l'indirizzo sul sito. Tel +39 393 705 5033, email Mercy85@hotmail.it. Orari: Lun-Ven 6-13/15-19, Sab 6-19 continuato, chiuso Dom (fonte IndaBox, da riconfermare). Sito attuale: assente, solo pagina Facebook. Fonte: Aziendit.com, IndaBox, Facebook. Destinazione: outreach reale. |
+| Lavanderia Pontida di Castagna Concetta (Vimercate, MB) | da definire | - | - | da contattare | da definire | Lavanderia/tintoria. Largo Pontida 12, Vimercate. Tel 039 6081426. Orari: non trovati (mancante). Sito attuale: assente — confermato esplicitamente da Empresite ("l'azienda non ha fornito un sito web"). Fonte: Empresite.it, PagineBianche, Coobiz. Destinazione: outreach reale. |
+| Nuovo Miro - Panificio Pasticceria (Usmate Velate, MB) | da definire | - | - | da contattare | da definire | Panificio/pasticceria/salumeria. Via San Giovanni Bosco 3, Usmate Velate. Tel 039 9181374. Orari: non trovati (mancante). Sito attuale: assente. Fonte: PagineGialle, PagineBianche, Virgilio. Destinazione: outreach reale. |
+| Ebel Sas di Brambilla Eugenio & C. (Lissone, MB) | da definire | - | - | da contattare | da definire | Impianti elettrici industriali e civili. Via Contardo Ferrini 1, Lissone. Tel 039 481317 / 347 7172864. Orari: non trovati (mancante). Sito attuale: assente. Fonte: PagineGialle, Edilportale, Virgilio. Destinazione: outreach reale. |
+| Ottica Migliorini snc (Vimercate, MB) | da definire | - | - | da contattare | da definire | Ottica/occhiali. Via Santi Cosma e Damiano 10, Vimercate. Tel 339 5349527. Orari: non trovati (mancante). Sito attuale: assente. Fonte: PagineBianche, PagineGialle. Destinazione: outreach reale. |
+
+## Nota metodologica sui 10 lead sopra (Marco, 20/09/2026)
+
+Ricerca fatta via web search (directory pubbliche: PagineGialle, PagineBianche, Virgilio/aziende.virgilio, Empresite, directory locali, Facebook), senza accesso a un tool di fetch HTTP diretto. Per ciascun lead ho incrociato più fonti indipendenti che normalmente riportano un campo "sito web" quando esiste, e ho scartato ogni attività per cui è emerso un sito verificabile e funzionante (es. Macelleria Piazza di Brugherio → macelleriapiazza.it attivo; Floricoltura Radaelli di Agrate Brianza → radaelligarden.it attivo; Airoldi Autofficina di Carnate → airoldiautofficina.com attivo; Studio Dentistico Seregno → sito proprio attivo; Wonderlong di Vimercate → è un franchising con sito di marca, quindi non un caso utile di "sito assente"). I 10 lead consegnati sono casi in cui nessuna fonte incrociata riporta un sito (in un caso, Lavanderia Pontida, l'assenza è dichiarata esplicitamente dalla fonte). Questo è più debole di un controllo HTTP diretto sul singolo dominio: prima dell'invio reale, un controllo manuale rapido (cercare il nome esatto dell'attività) resta consigliato a chi scrive l'email.
+
+Dati non trovati e NON inventati, da questa lista: orari per i lead Idraulica Musarra, Elettrosat, Lavanderia Pontida, Nuovo Miro, Ebel Sas, Ottica Migliorini; conferma dell'indirizzo esatto per Bar "Al Solito Posto"; conferma di attualità degli orari per Estetica Mami e per Bar "Al Solito Posto". Chi scrive le email/il sito deve trattarli come mancanti (chiederli al titolare in prima chiamata, o ometterli), non presumerli.
+
+Tutti e 10 sono destinati a **outreach verso l'attività specifica** (dati reali raccolti su aziende vere che non sanno ancora di Vetrina) — nessuno di questi nomi/indirizzi va usato come esempio pubblico generico sul sito Vetrina (home, portfolio): per quello resta valido solo un nome fittizio come "Nefasto Parrucchieri".
 
 ## Legenda stato
 - `da contattare` — lead trovato da Marco, non ancora scritto
@@ -21,13 +39,13 @@ Stato reale: pipeline ferma a zero (0 lead, 0 contatti, 0 incassi). Nessuna azio
 | # | Assegnato a | Azione | Scadenza | Stato |
 |---|---|---|---|---|
 | 1 | Stefano | Confermare per iscritto lo sblocco: anticipare la milestone "Avvio outreach reale" da 05/10/2026 a subito, dato che chiede di partire ora. Senza questa conferma esplicita resta valida la decisione precedente di non contattare nessuno. | oggi 20/09 | da confermare |
-| 2 | Marco | Consegnare i primi 10 lead reali (non test): nome attività, comune, email/telefono di contatto. Vanno inseriti nella tabella pipeline in cima a questo file. | domani 21/09 (fine giornata) | assegnato |
+| 2 | Marco | Consegnare i primi 10 lead reali (non test): nome attività, comune, email/telefono di contatto. Vanno inseriti nella tabella pipeline in cima a questo file. | domani 21/09 (fine giornata) | **fatto 20/09 — 10 lead consegnati (v. tabella sopra e nota metodologica)** |
 | 3 | Andrea | Sistemare i pulsanti "mailto" in homepage: aggiungere fallback visibile (indirizzo email in chiaro, copiabile con un click) per chi non ha un client email predefinito sul dispositivo. | oggi 20/09 | assegnato |
 | 4 | Chiara | Dare via libera scritto (go/no-go) sui template email che Giulia userà per il primo invio reale, verificando che rispettino le regole già integrate nei prompt di Marco/Luca. | oggi 20/09 | assegnato |
-| 5 | Giulia | Appena Marco consegna i lead (azione #2) e Chiara dà il via libera (azione #4), inviare le prime email/DM reali ai primi contatti e aggiornare questo file con data di invio e stato "contattato". | domani 21/09, subito dopo #2 e #4 | in attesa dei prerequisiti |
+| 5 | Giulia | Appena Marco consegna i lead (azione #2) e Chiara dà il via libera (azione #4), inviare le prime email/DM reali ai primi contatti e aggiornare questo file con data di invio e stato "contattato". | domani 21/09, subito dopo #2 e #4 | prerequisito #2 soddisfatto (10 lead sopra); in attesa di #4 |
 
 ## Metriche correnti
-- Lead trovati: 0 (reali)
+- Lead trovati: 10 (reali)
 - Contattati: 0 (reali)
 - Chiusi positivi: 0
 - Capitale incassato: 0€

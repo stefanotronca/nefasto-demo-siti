@@ -3,84 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vetrina — siti web per attività che non ne hanno</title>
-<meta name="description" content="Vetrina costruisce il sito della tua attività prima ancora che tu decida di comprarlo. Lo vedi finito, paghi solo se ti piace. 100€, 179€ o 279€, nessun abbonamento.">
+<title>Vetrina — il tuo sito, prima di pagarlo</title>
+<meta name="description" content="Vetrina costruisce siti web per attività locali senza un sito funzionante. Lo vedi finito, online, con i tuoi contenuti. Paghi solo se ti piace: 100€, 179€ o 279€, nessun abbonamento.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Vetrina — siti web per attività locali">
-<meta property="og:description" content="Costruiamo il sito prima di chiedere un euro. Lo vedi, se ti piace paghi, se no niente.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vetrina — il tuo sito, prima di pagarlo">
+<meta property="og:description" content="Costruiamo il sito della tua attività. Lo vedi finito prima di decidere. Paghi solo se ti piace.">
+<meta property="og:url" content="https://nefasto-demo-siti-s5wq.vercel.app/">
 <link rel="canonical" href="https://nefasto-demo-siti-s5wq.vercel.app/">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vetrina",
+  "description": "Vetrina costruisce siti web one-page per attività locali senza un sito funzionante. Il sito viene mostrato finito prima del pagamento.",
+  "url": "https://nefasto-demo-siti-s5wq.vercel.app/",
+  "email": "nefastoproject@gmail.com",
+  "areaServed": "IT",
+  "priceRange": "€100-€279",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "nefaSto",
+    "url": "https://nefasto.vercel.app"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Vetrina Base",
+      "price": "100",
+      "priceCurrency": "EUR",
+      "description": "Sito one-page, foto professionali di repertorio, listino/orari/contatti, SEO locale di base, hosting incluso."
+    },
+    {
+      "@type": "Offer",
+      "name": "Vetrina Standard",
+      "price": "179",
+      "priceCurrency": "EUR",
+      "description": "Tutto il Base più prenotazione sempre visibile, collegamento social e mappa."
+    },
+    {
+      "@type": "Offer",
+      "name": "Vetrina Premium",
+      "price": "279",
+      "priceCurrency": "EUR",
+      "description": "Tutto lo Standard più galleria fotografica ampliata, dominio personalizzato incluso e codice sorgente consegnato al cliente."
+    }
+  ]
+}
+</script>
 <style>
   :root{
-    --bg:#f5f4f1; --surface:#ffffff; --ink:#1b1d22; --ink-soft:#5a5d66;
-    --dark:#12141a; --accent:#e0632f; --accent-ink:#2a1208;
-    --border:#dedcd5;
-    --font-display:'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
-    --font-body:'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --ink:#0F1B33;
+    --signal:#2952E3;
+    --mist:#E9EDF5;
+    --paper:#FAFBFD;
+    --mint:#2BB673;
+    --amber:#F2A93B;
+    --surface:#FFFFFF;
+    --border:#D8DEEA;
+    --ink-soft:#4A5570;
+    --on-signal:#FFFFFF;
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0f1115; --surface:#191c22; --ink:#eceef2; --ink-soft:#a4a8b3;
-      --dark:#090a0d; --accent:#f2865a; --accent-ink:#2a1208;
-      --border:#2b2f38;
+    :root{
+      --ink:#E6EAF2;
+      --signal:#5B7FFF;
+      --mist:#131C2E;
+      --paper:#0B1220;
+      --mint:#34D399;
+      --amber:#F2B84B;
+      --surface:#131C2E;
+      --border:#243049;
+      --ink-soft:#AEB8CC;
+      --on-signal:#0B1220;
     }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0f1115; --surface:#191c22; --ink:#eceef2; --ink-soft:#a4a8b3;
-    --dark:#090a0d; --accent:#f2865a; --accent-ink:#2a1208;
-    --border:#2b2f38;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
-  .wrap{max-width:1140px; margin:0 auto; padding:0 20px;}
-  nav.top{position:sticky; top:0; z-index:20; background:var(--dark); display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
-  nav.top .brand{font-family:var(--font-display); font-weight:700; font-size:1.3rem; color:#fff; letter-spacing:-0.01em;}
-  nav.top a.btn-nav{background:var(--accent); color:var(--accent-ink); font-weight:600; font-size:0.88rem; padding:9px 18px; border-radius:8px; text-decoration:none;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.65; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:var(--signal);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
 
-  header.hero{background:var(--dark); padding-block:80px 64px;}
-  header.hero .eyebrow{font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 0 16px;}
-  header.hero h1{font-family:var(--font-display); font-weight:700; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.1; margin:0 0 20px; color:#fff; letter-spacing:-0.02em; text-wrap:balance; max-width:16ch;}
-  header.hero p.sub{font-size:1.15rem; color:#c7cad2; max-width:52ch; margin:0 0 32px;}
-  .cta-row{display:flex; gap:12px; flex-wrap:wrap;}
-  .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:8px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent;}
-  .btn-primary{background:var(--accent); color:var(--accent-ink);}
-  .btn-ghost{background:transparent; color:#fff; border-color:#3a3d47;}
+  nav.top{position:sticky; top:0; z-index:30; background:var(--ink); display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  nav.top .brand{font-family:var(--font-display); font-weight:600; font-size:1.35rem; color:var(--paper); letter-spacing:-0.01em;}
+  nav.top a.btn-nav{background:var(--signal); color:#fff; font-weight:600; font-size:0.88rem; padding:10px 20px; border-radius:8px; text-decoration:none;}
 
-  section{padding-block:64px;}
-  h2{font-family:var(--font-display); font-weight:700; font-size:1.9rem; margin:0 0 12px; color:var(--ink); letter-spacing:-0.01em;}
-  section > .wrap > p.lead{font-size:1.05rem; color:var(--ink-soft); max-width:60ch; margin:0 0 40px;}
+  header.hero{background:var(--ink); padding-block:88px 72px;}
+  header.hero .eyebrow{font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); font-weight:600; margin:0 0 18px;}
+  header.hero h1{font-family:var(--font-display); font-weight:600; font-size:clamp(2.6rem,6vw,4rem); line-height:1.08; margin:0 0 22px; color:#fff; letter-spacing:-0.01em; max-width:16ch;}
+  header.hero p.sub{font-size:1.2rem; color:#C7CEDE; max-width:56ch; margin:0 0 34px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:8px; font-size:0.98rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer;}
+  .btn-primary{background:var(--signal); color:#fff;}
+  .btn-ghost{background:transparent; color:#fff; border-color:#3B4664;}
 
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .step{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:26px 22px;}
-  .step .num{font-family:var(--font-display); font-weight:700; font-size:0.85rem; color:var(--accent); margin-bottom:10px;}
-  .step h3{font-size:1.1rem; margin:0 0 8px; font-weight:600;}
-  .step p{font-size:0.92rem; color:var(--ink-soft); margin:0;}
+  section{padding-block:72px;}
+  section.on-mist{background:var(--mist);}
+  h2{font-family:var(--font-display); font-weight:600; font-size:2rem; margin:0 0 14px; color:var(--ink); letter-spacing:-0.01em;}
+  section > .wrap > p.lead{font-size:1.08rem; color:var(--ink-soft); max-width:64ch; margin:0 0 40px;}
 
-  .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .plan{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:28px 24px; display:flex; flex-direction:column;}
-  .plan.featured{border:2px solid var(--accent);}
-  .plan .tag{font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
-  .plan .price{font-family:var(--font-display); font-size:2.2rem; font-weight:700; margin:0 0 18px;}
-  .plan .price span{font-size:1rem; font-weight:500; color:var(--ink-soft);}
-  .plan ul{list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:10px; flex-grow:1;}
-  .plan li{font-size:0.92rem; color:var(--ink-soft); padding-left:20px; position:relative;}
-  .plan li::before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+  /* Portfolio */
+  .portfolio-card{background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr;}
+  .portfolio-card img{width:100%; height:100%; object-fit:cover; min-height:280px;}
+  .portfolio-body{padding:32px 34px; display:flex; flex-direction:column; gap:16px;}
+  .portfolio-body h3{font-size:1.4rem; margin:0; font-family:var(--font-display); font-weight:600;}
+  .portfolio-body p{margin:0; color:var(--ink-soft); font-size:0.98rem;}
+  .disclaimer{display:inline-flex; align-items:center; gap:8px; background:rgba(242,169,59,0.14); border:1px solid var(--amber); color:var(--ink); border-radius:8px; padding:10px 14px; font-size:0.88rem; font-weight:600; width:fit-content;}
+  .disclaimer::before{content:"⚠"; color:var(--amber);}
+  .tier-links{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;}
+  .tier-links a{border:1px solid var(--border); border-radius:8px; padding:10px 16px; text-decoration:none; color:var(--ink); font-size:0.9rem; font-weight:600;}
+  .tier-links a:hover{border-color:var(--signal); color:var(--signal);}
 
-  .why{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
-  .why-item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px;}
-  .why-item h3{font-size:1rem; margin:0 0 8px; font-weight:600;}
-  .why-item p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+  /* Come funziona */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .step{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:28px 24px;}
+  .step .num{font-family:var(--font-display); font-weight:700; font-size:0.9rem; color:var(--signal); margin-bottom:12px;}
+  .step h3{font-size:1.12rem; margin:0 0 10px; font-weight:600;}
+  .step p{font-size:0.94rem; color:var(--ink-soft); margin:0;}
+  .risk-note{margin-top:28px; display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink);}
+  .risk-note::before{content:"✓"; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--mint); color:#fff; font-size:0.8rem; flex-shrink:0;}
 
-  .cta-final{background:var(--dark); border-radius:16px; padding:48px 40px; text-align:center;}
-  .cta-final h2{color:#fff;}
-  .cta-final p{color:#c7cad2; max-width:50ch; margin:0 auto 28px;}
+  /* Pricing */
+  .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .plan{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:30px 26px; display:flex; flex-direction:column;}
+  .plan.featured{border:2px solid var(--signal); position:relative; box-shadow:0 8px 28px rgba(41,82,227,0.12);}
+  .plan.featured::before{content:"Più scelto"; position:absolute; top:-13px; left:26px; background:var(--signal); color:#fff; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:5px 12px; border-radius:20px;}
+  .plan .tag{font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px;}
+  .plan.premium .tag{color:var(--amber);}
+  .plan .price{font-family:var(--font-display); font-size:2.3rem; font-weight:600; margin:0 0 20px;}
+  .plan .price span{font-size:1rem; font-weight:400; color:var(--ink-soft);}
+  .plan ul{list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:11px; flex-grow:1;}
+  .plan li{font-size:0.93rem; color:var(--ink-soft); padding-left:24px; position:relative;}
+  .plan li::before{content:"✓"; position:absolute; left:0; color:var(--mint); font-weight:700;}
+  .plan-cta{text-align:center; justify-content:center;}
+  .pricing-note{margin-top:30px; color:var(--ink-soft); font-size:0.94rem; text-align:center;}
 
-  footer{background:var(--dark); color:#9a9da6; padding-block:32px; font-size:0.85rem;}
-  footer a{color:var(--accent);}
+  /* Perché */
+  .why{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  .why-item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; display:flex; gap:14px; align-items:flex-start;}
+  .why-item .check{flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--mint); color:#fff; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:700; margin-top:2px;}
+  .why-item h3{font-size:1.02rem; margin:0 0 6px; font-weight:600;}
+  .why-item p{font-size:0.92rem; color:var(--ink-soft); margin:0;}
 
+  .cta-final{background:var(--ink); border-radius:18px; padding:56px 44px; text-align:center;}
+  .cta-final h2{color:#fff; font-size:2.1rem;}
+  .cta-final p{color:#C7CEDE; max-width:52ch; margin:0 auto 30px; font-size:1.05rem;}
+
+  footer{background:var(--ink); color:#8D96AC; padding-block:32px; font-size:0.86rem; border-top:1px solid #1E2A44;}
+  footer a{color:var(--signal);}
+
+  @media (max-width:900px){
+    .portfolio-card{grid-template-columns:1fr;}
+    .portfolio-card img{min-height:220px;}
+  }
   @media (max-width:760px){
     .steps, .pricing, .why{grid-template-columns:1fr;}
+    header.hero{padding-block:64px 52px;}
+    section{padding-block:56px;}
+    .cta-final{padding:40px 26px;}
+    nav.top{padding:14px 18px;}
   }
 </style>
 </head>
@@ -88,46 +175,67 @@
 
 <nav class="top">
   <span class="brand">Vetrina</span>
-  <a class="btn-nav" href="mailto:nefastoproject@gmail.com">Scrivici</a>
+  <a class="btn-nav" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Richiesta%20sito">Scrivici</a>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Un progetto nefaSto</p>
-    <h1>Il tuo sito, già finito, prima che tu decida di comprarlo</h1>
-    <p class="sub">Costruiamo il sito della tua attività usando le informazioni che già trovi su Google. Te lo mostriamo pronto. Se ti piace, lo tieni per 100, 179 o 279€. Se non ti piace, non ci devi nulla.</p>
+    <p class="eyebrow">Vetrina — un progetto nefaSto</p>
+    <h1>Il tuo sito, prima di pagarlo.</h1>
+    <p class="sub">Costruiamo siti web per attività locali che non ne hanno uno funzionante. Lo vedi finito, online, con i tuoi contenuti. Paghi solo se ti piace.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#prezzi">Vedi i prezzi</a>
-      <a class="btn btn-ghost" href="https://nefasto.vercel.app" target="_blank" rel="noopener">Chi siamo</a>
+      <a class="btn btn-primary" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Richiesta%20sito">Richiedi il tuo sito</a>
+      <a class="btn btn-ghost" href="#esempio">Guarda un esempio</a>
     </div>
   </div>
 </header>
 
-<section class="come-funziona">
+<section id="esempio">
   <div class="wrap">
-    <h2>Come funziona</h2>
-    <p class="lead">Tre passaggi, nessuno dei quali ti costa tempo prima di vedere il risultato.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="num">01</div>
-        <h3>Troviamo la tua attività</h3>
-        <p>Cerchiamo attività senza un sito funzionante e raccogliamo le informazioni già pubbliche (indirizzo, orari, servizi).</p>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <h3>Costruiamo il sito</h3>
-        <p>Un sito vero, pubblicato online, con le tue informazioni reali — non una bozza, non un mockup.</p>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <h3>Decidi tu</h3>
-        <p>Lo vedi finito. Se ti piace, paghi e resta tuo. Se non ti piace, non paghi nulla e non ti ricontattiamo.</p>
+    <h2>Un esempio concreto</h2>
+    <p class="lead">Prima di proporti qualcosa a parole, ti facciamo vedere come lavoriamo su un caso reale.</p>
+    <div class="portfolio-card">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80" alt="Interno di un salone di parrucchiere, foto di repertorio usata nel sito dimostrativo Hair Club" loading="lazy">
+      <div class="portfolio-body">
+        <h3>Hair Club — Trezzo sull'Adda</h3>
+        <p>Un sito dimostrativo che abbiamo costruito per testare il nostro modo di lavorare: dalla raccolta delle informazioni alla pubblicazione online, nei tre pacchetti che offriamo.</p>
+        <span class="disclaimer">Esempio dimostrativo, non testimonianza di un cliente reale</span>
+        <div class="tier-links">
+          <a href="/hairclub/">Vedi Base — 100€</a>
+          <a href="/hairclub-standard/">Vedi Standard — 179€</a>
+          <a href="/hairclub-premium/">Vedi Premium — 279€</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="prezzi" id="prezzi">
+<section class="on-mist">
+  <div class="wrap">
+    <h2>Come funziona</h2>
+    <p class="lead">Tre passaggi, nessuno dei quali ti costa qualcosa prima di vedere il risultato.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Ci parli della tua attività</h3>
+        <p>Ci racconti chi sei, cosa fai e cosa vuoi che i tuoi clienti trovino online.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Costruiamo il sito</h3>
+        <p>Lo vedi finito, online, con i tuoi contenuti — prima di decidere qualsiasi cosa.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Decidi tu</h3>
+        <p>Se ti piace lo attivi e paghi. Se no, non devi nulla.</p>
+      </div>
+    </div>
+    <p class="risk-note">Nessun anticipo, nessun acconto. Il rischio è nostro, non tuo.</p>
+  </div>
+</section>
+
+<section id="prezzi">
   <div class="wrap">
     <h2>Prezzi</h2>
     <p class="lead">Una tantum. Nessun abbonamento mensile forzato.</p>
@@ -142,20 +250,20 @@
           <li>SEO locale di base</li>
           <li>Hosting incluso</li>
         </ul>
-        <a class="btn btn-ghost" style="border-color:var(--border); color:var(--ink); justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Base">Richiedi</a>
+        <a class="btn btn-ghost plan-cta" style="border-color:var(--border); color:var(--ink);" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Base">Richiedi</a>
       </div>
       <div class="plan featured">
         <div class="tag">Standard</div>
         <div class="price">179€</div>
         <ul>
           <li>Tutto quello del Base</li>
-          <li>Pulsante prenotazione sempre visibile</li>
+          <li>Prenotazione sempre visibile</li>
           <li>Collegamento ai tuoi social</li>
           <li>Mappa per raggiungerti</li>
         </ul>
-        <a class="btn btn-primary" style="justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Standard">Richiedi</a>
+        <a class="btn btn-primary plan-cta" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Standard">Richiedi</a>
       </div>
-      <div class="plan">
+      <div class="plan premium">
         <div class="tag">Premium</div>
         <div class="price">279€</div>
         <ul>
@@ -164,31 +272,44 @@
           <li>Dominio personalizzato incluso</li>
           <li>Codice sorgente consegnato a te</li>
         </ul>
-        <a class="btn btn-ghost" style="border-color:var(--border); color:var(--ink); justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Premium">Richiedi</a>
+        <a class="btn btn-ghost plan-cta" style="border-color:var(--border); color:var(--ink);" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Premium">Richiedi</a>
       </div>
     </div>
+    <p class="pricing-note">Prezzo unico, pagamento una tantum. Nessun canone mensile su nostri servizi.</p>
   </div>
 </section>
 
-<section class="perche">
+<section class="on-mist">
   <div class="wrap">
     <h2>Perché Vetrina</h2>
     <div class="why">
       <div class="why-item">
-        <h3>Vedi prima, paghi dopo</h3>
-        <p>Non ti chiediamo di fidarti su descrizione: il sito esiste già, con le tue informazioni, prima di chiederti un euro.</p>
+        <span class="check">✓</span>
+        <div>
+          <h3>Vedi il sito prima di pagarlo</h3>
+          <p>Non ti chiediamo di fidarti su una descrizione: il sito esiste già, con i tuoi contenuti, prima di chiederti un euro.</p>
+        </div>
       </div>
       <div class="why-item">
-        <h3>Nessun blocco se cambi idea</h3>
-        <p>Il codice resta tuo (piano Premium) e possiamo consegnarlo comunque su richiesta anche sugli altri piani.</p>
+        <span class="check">✓</span>
+        <div>
+          <h3>Nessun anticipo</h3>
+          <p>Zero acconti, zero caparre. Se il sito non ti convince, non ci devi nulla.</p>
+        </div>
       </div>
       <div class="why-item">
-        <h3>Gestito da un progetto AI trasparente</h3>
-        <p>Vetrina fa parte di nefaSto, un progetto che pubblica in pubblico le proprie decisioni, incluse quelle sbagliate. Dietro c'è comunque una persona reale, raggiungibile.</p>
+        <span class="check">✓</span>
+        <div>
+          <h3>Pensato per chi non ha ancora un sito che funziona</h3>
+          <p>Ci rivolgiamo ad attività locali che oggi non hanno un sito, o ne hanno uno che non porta clienti.</p>
+        </div>
       </div>
       <div class="why-item">
-        <h3>Nessun abbonamento forzato</h3>
-        <p>Paghi una volta. Se un domani vuoi cambiare gestore, il sito resta tuo, non nostro.</p>
+        <span class="check">✓</span>
+        <div>
+          <h3>Con Premium il codice resta tuo</h3>
+          <p>Con il pacchetto Premium ti consegniamo il codice sorgente: il sito resta tuo, in ogni caso.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -197,16 +318,16 @@
 <section class="cta-finale">
   <div class="wrap">
     <div class="cta-final">
-      <h2>Hai un'attività senza sito funzionante?</h2>
-      <p>Scrivici, o aspetta che ti troviamo noi — o in ogni caso puoi già vedere degli <a href="/esempi/" style="color:var(--accent)">esempi reali</a> di cosa costruiamo.</p>
-      <a class="btn btn-primary" href="mailto:nefastoproject@gmail.com">nefastoproject@gmail.com</a>
+      <h2>Vuoi vedere il tuo sito finito?</h2>
+      <p>Scrivici, ci racconti la tua attività, e ti mostriamo il sito prima che tu decida qualsiasi cosa.</p>
+      <a class="btn btn-primary" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Parliamone">Parliamone</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    Vetrina è un progetto di <a href="https://nefasto.vercel.app" target="_blank" rel="noopener">nefaSto</a>.
+    Vetrina è un progetto di <a href="https://nefasto.vercel.app" target="_blank" rel="noopener">nefaSto</a>. Consulta anche gli <a href="/esempi/">esempi realizzati</a>.
   </div>
 </footer>
 

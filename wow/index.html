@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070A12">
+<title>Vetrina — Demo scrollytelling 3D (materiale dimostrativo)</title>
+<meta name="description" content="Dimostrazione tecnica di Vetrina: un poliedro low-poly che si solidifica durante lo scroll, da wireframe grezzo a superficie glossy. Materiale di portfolio, non un sito venduto a un cliente.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://nefasto-demo-siti-s5wq.vercel.app/wow/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Vetrina — Demo scrollytelling 3D",
+  "description": "Materiale dimostrativo/portfolio tecnico di Vetrina: esperienza scrollytelling con un poliedro 3D che passa da wireframe grezzo a superficie glossy rifinita. Non è un sito consegnato a un cliente.",
+  "creator": { "@type": "Organization", "name": "nefaSto" },
+  "isPartOf": { "@type": "WebSite", "name": "Vetrina", "url": "https://nefasto-demo-siti-s5wq.vercel.app/" },
+  "genre": "Portfolio tecnico dimostrativo"
+}
+</script>
+<style>
+  :root{
+    --bg:#070A12;
+    --ink-navy:#0F1B33;
+    --signal-blue:#2952E3;
+    --cyan:#4DEBD1;
+    --warm:#FFC98A;
+    --text:#F3F6FC;
+    --text-muted:#AEB9D6;
+    --scrim:rgba(7,10,18,0.55);
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; padding:0; height:100%;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--font-body);
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:var(--cyan);}
+
+  /* Badge/back link fissi, non invasivi */
+  .demo-topbar{
+    position:fixed; top:0; left:0; right:0; z-index:40;
+    display:flex; align-items:flex-start; justify-content:space-between;
+    flex-wrap:wrap; gap:8px; padding:16px; pointer-events:none;
+  }
+  .demo-badge{
+    background:rgba(7,10,18,0.85); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(77,235,209,0.35);
+    color:var(--text-muted); font-size:0.72rem; font-weight:600; letter-spacing:0.04em;
+    text-transform:uppercase; padding:7px 12px; border-radius:999px; pointer-events:none;
+    max-width:60vw;
+  }
+  .back-link{
+    font-family:var(--font-body); font-size:0.82rem; font-weight:600;
+    color:var(--text); text-decoration:none; background:rgba(7,10,18,0.85);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.15); padding:8px 14px; border-radius:999px;
+    pointer-events:auto;
+  }
+  .back-link:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  /* Canvas 3D fisso a piena pagina, dietro al testo */
+  #webgl-canvas{
+    position:fixed; inset:0; width:100%; height:100%; display:block; z-index:0;
+  }
+  #webgl-canvas::after{ content:""; }
+
+  /* Vignette leggera per profondità e contrasto testo */
+  .vignette{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:radial-gradient(ellipse at center, rgba(7,10,18,0) 35%, rgba(7,10,18,0.75) 100%);
+  }
+
+  /* Fallback CSS-only per mobile/dispositivi deboli/reduced-motion */
+  #fallback-art{
+    position:fixed; inset:0; z-index:0; display:none; align-items:center; justify-content:center;
+    perspective:900px;
+  }
+  html[data-mode="fallback"] #fallback-art{display:flex;}
+  html[data-mode="fallback"] #webgl-canvas{display:none;}
+
+  .fallback-shape{
+    position:relative; width:200px; height:230px;
+    transform-style:preserve-3d;
+    animation:idleSpin 14s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .fallback-shape{animation:none;}
+  }
+  @keyframes idleSpin{
+    from{ transform: rotateY(0deg) rotateX(6deg); }
+    to{ transform: rotateY(360deg) rotateX(6deg); }
+  }
+  .fallback-shape .facet{
+    position:absolute; inset:0;
+    clip-path:polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    transition:opacity 0.9s ease, transform 0.9s ease, box-shadow 0.9s ease;
+  }
+  .fallback-shape .facet.wire{
+    background:transparent;
+    border:2px solid rgba(77,235,209,0.55);
+    opacity:0.9; transform:scale(1) rotate(-5deg);
+  }
+  .fallback-shape .facet.solid{
+    background:linear-gradient(135deg, var(--signal-blue), var(--cyan) 120%);
+    opacity:0; transform:scale(0.9) rotate(4deg);
+  }
+  #fallback-art[data-stage="0"] .facet.wire{ opacity:0.85; transform:scale(1) rotate(-5deg); }
+  #fallback-art[data-stage="0"] .facet.solid{ opacity:0; }
+  #fallback-art[data-stage="1"] .facet.wire{ opacity:0.5; transform:scale(1.18) rotate(6deg); }
+  #fallback-art[data-stage="1"] .facet.solid{ opacity:0; }
+  #fallback-art[data-stage="2"] .facet.wire{ opacity:0.3; transform:scale(1) rotate(0deg); }
+  #fallback-art[data-stage="2"] .facet.solid{ opacity:0.9; transform:scale(1) rotate(0deg); box-shadow:0 0 50px rgba(77,235,209,0.3); }
+  #fallback-art[data-stage="3"] .facet.wire{ opacity:0.18; }
+  #fallback-art[data-stage="3"] .facet.solid{ opacity:1; transform:scale(1.04) rotate(0deg); box-shadow:0 0 70px rgba(255,201,138,0.35); }
+
+  /* Contenuto scrollabile */
+  main#scroll-main{ position:relative; z-index:1; }
+  .beat{ min-height:100vh; display:flex; align-items:center; padding:8vh 6vw; padding-top:max(8vh, 76px); }
+  .beat-inner{
+    max-width:600px; padding:30px 34px; border-radius:22px;
+    background:var(--scrim); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    opacity:0; transform:translateY(36px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .beat-inner.is-visible{ opacity:1; transform:translateY(0); }
+  .eyebrow{
+    font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--cyan); font-weight:700; margin:0 0 16px;
+  }
+  h1{
+    font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;
+    font-size:clamp(2.2rem, 6vw, 3.8rem); line-height:1.08; margin:0 0 20px; color:#fff;
+  }
+  h2{
+    font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;
+    font-size:clamp(1.7rem, 4.4vw, 2.7rem); line-height:1.14; margin:0 0 18px; color:#fff;
+  }
+  .beat-sub{ font-size:1.08rem; color:var(--text-muted); margin:0; max-width:48ch; }
+  .beat-cta .beat-inner{ margin:0 auto; text-align:center; max-width:520px; }
+  .beat-cta .beat-sub{ margin:0 auto 26px; }
+  .cta-link{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    background:var(--signal-blue); color:#fff; font-weight:600; font-size:1rem;
+    padding:14px 28px; border-radius:999px; border:1px solid transparent;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .cta-link:hover{ background:var(--cyan); color:#052024; transform:translateY(-2px); }
+  .cta-link:focus-visible, .back-link:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
+
+  footer.demo-footer{
+    position:relative; z-index:1; background:#04060B; color:var(--text-muted);
+    padding:34px 6vw; font-size:0.86rem; border-top:1px solid rgba(255,255,255,0.08);
+  }
+  footer.demo-footer strong{ color:#fff; }
+  footer.demo-footer p{ max-width:70ch; margin:0 0 8px; }
+
+  @media (max-width:760px){
+    .beat{ padding:7vh 6vw; }
+    .beat-inner{ padding:24px 24px; border-radius:18px; }
+    .demo-badge{ font-size:0.62rem; padding:6px 10px; max-width:56vw; }
+    .back-link{ font-size:0.76rem; padding:7px 12px; }
+  }
+  @media (max-width:360px){
+    .demo-topbar{ padding:10px; }
+    .demo-badge{ max-width:100%; order:2; }
+    .back-link{ order:1; }
+  }
+  @media (max-width:420px){
+    .beat-inner{ max-width:100%; }
+    h1{ font-size:2rem; }
+    h2{ font-size:1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-topbar">
+  <a class="back-link" href="/">&larr; Vetrina</a>
+  <span class="demo-badge">Demo tecnica &middot; non un sito cliente</span>
+</div>
+
+<canvas id="webgl-canvas" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div id="fallback-art" data-stage="0" aria-hidden="true">
+  <div class="fallback-shape">
+    <div class="facet wire"></div>
+    <div class="facet solid"></div>
+  </div>
+</div>
+
+<main id="scroll-main">
+
+  <section class="beat" id="beat-0" data-beat="0" aria-labelledby="h-hero">
+    <div class="beat-inner">
+      <p class="eyebrow">Vetrina &mdash; demo scrollytelling</p>
+      <h1 id="h-hero">Da invisibile a vetrina.</h1>
+      <p class="beat-sub">Quello che non si vede online, per i clienti non esiste.</p>
+    </div>
+  </section>
+
+  <section class="beat" id="beat-1" data-beat="1" aria-labelledby="h-problema">
+    <div class="beat-inner">
+      <p class="eyebrow">Il problema</p>
+      <h2 id="h-problema">Chi cerca non trova. Chi trova, se ne va altrove.</h2>
+      <p class="beat-sub">Ogni giorno senza un sito è un cliente che ha scelto qualcun altro prima ancora di conoscerti.</p>
+    </div>
+  </section>
+
+  <section class="beat" id="beat-2" data-beat="2" aria-labelledby="h-soluzione">
+    <div class="beat-inner">
+      <p class="eyebrow">La soluzione</p>
+      <h2 id="h-soluzione">Vetrina costruisce siti veri, non bozze.</h2>
+      <p class="beat-sub">Struttura solida, contenuti scritti su misura, online in tempi brevi &mdash; senza rimandare a poi.</p>
+    </div>
+  </section>
+
+  <section class="beat beat-cta" id="beat-3" data-beat="3" aria-labelledby="h-cta">
+    <div class="beat-inner">
+      <p class="eyebrow">Parliamone</p>
+      <h2 id="h-cta">Vuoi vedere come diventa la tua vetrina?</h2>
+      <p class="beat-sub">Scrivici.</p>
+      <a class="cta-link" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Demo%20scrollytelling">Scrivici via email</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="demo-footer">
+  <p><strong>Materiale dimostrativo.</strong> Questa pagina è un portfolio tecnico di <a href="https://nefasto.vercel.app" target="_blank" rel="noopener">nefaSto</a> per mostrare cosa sappiamo costruire: non è il sito venduto ai clienti né una pagina indicizzata sui motori di ricerca (noindex).</p>
+  <p><a href="/">&larr; Torna a Vetrina</a></p>
+</footer>
+
+<script src="/wow/scene.js" defer></script>
+</body>
+</html>

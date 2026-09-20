@@ -2,22 +2,213 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>nefaSto — demo siti</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vetrina — siti web per attività che non ne hanno</title>
+<meta name="description" content="Vetrina costruisce il sito della tua attività prima ancora che tu decida di comprarlo. Lo vedi finito, paghi solo se ti piace. 100€, 179€ o 279€, nessun abbonamento.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Vetrina — siti web per attività locali">
+<meta property="og:description" content="Costruiamo il sito prima di chiedere un euro. Lo vedi, se ti piace paghi, se no niente.">
+<link rel="canonical" href="https://nefasto-demo-siti-s5wq.vercel.app/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-  body{font-family:sans-serif; background:#111; color:#eee; padding:40px; max-width:600px; margin:0 auto;}
-  a{color:#e6c98a;}
-  .tiers{display:flex; flex-direction:column; gap:10px; margin-top:20px;}
-  .tiers a{padding:14px 18px; border:1px solid #333; border-radius:8px; text-decoration:none;}
+  :root{
+    --bg:#f5f4f1; --surface:#ffffff; --ink:#1b1d22; --ink-soft:#5a5d66;
+    --dark:#12141a; --accent:#e0632f; --accent-ink:#2a1208;
+    --border:#dedcd5;
+    --font-display:'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+    --font-body:'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1115; --surface:#191c22; --ink:#eceef2; --ink-soft:#a4a8b3;
+      --dark:#090a0d; --accent:#f2865a; --accent-ink:#2a1208;
+      --border:#2b2f38;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1115; --surface:#191c22; --ink:#eceef2; --ink-soft:#a4a8b3;
+    --dark:#090a0d; --accent:#f2865a; --accent-ink:#2a1208;
+    --border:#2b2f38;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 20px;}
+  nav.top{position:sticky; top:0; z-index:20; background:var(--dark); display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  nav.top .brand{font-family:var(--font-display); font-weight:700; font-size:1.3rem; color:#fff; letter-spacing:-0.01em;}
+  nav.top a.btn-nav{background:var(--accent); color:var(--accent-ink); font-weight:600; font-size:0.88rem; padding:9px 18px; border-radius:8px; text-decoration:none;}
+
+  header.hero{background:var(--dark); padding-block:80px 64px;}
+  header.hero .eyebrow{font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 0 16px;}
+  header.hero h1{font-family:var(--font-display); font-weight:700; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.1; margin:0 0 20px; color:#fff; letter-spacing:-0.02em; text-wrap:balance; max-width:16ch;}
+  header.hero p.sub{font-size:1.15rem; color:#c7cad2; max-width:52ch; margin:0 0 32px;}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:8px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent;}
+  .btn-primary{background:var(--accent); color:var(--accent-ink);}
+  .btn-ghost{background:transparent; color:#fff; border-color:#3a3d47;}
+
+  section{padding-block:64px;}
+  h2{font-family:var(--font-display); font-weight:700; font-size:1.9rem; margin:0 0 12px; color:var(--ink); letter-spacing:-0.01em;}
+  section > .wrap > p.lead{font-size:1.05rem; color:var(--ink-soft); max-width:60ch; margin:0 0 40px;}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .step{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:26px 22px;}
+  .step .num{font-family:var(--font-display); font-weight:700; font-size:0.85rem; color:var(--accent); margin-bottom:10px;}
+  .step h3{font-size:1.1rem; margin:0 0 8px; font-weight:600;}
+  .step p{font-size:0.92rem; color:var(--ink-soft); margin:0;}
+
+  .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .plan{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:28px 24px; display:flex; flex-direction:column;}
+  .plan.featured{border:2px solid var(--accent);}
+  .plan .tag{font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
+  .plan .price{font-family:var(--font-display); font-size:2.2rem; font-weight:700; margin:0 0 18px;}
+  .plan .price span{font-size:1rem; font-weight:500; color:var(--ink-soft);}
+  .plan ul{list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:10px; flex-grow:1;}
+  .plan li{font-size:0.92rem; color:var(--ink-soft); padding-left:20px; position:relative;}
+  .plan li::before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  .why{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .why-item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px;}
+  .why-item h3{font-size:1rem; margin:0 0 8px; font-weight:600;}
+  .why-item p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+
+  .cta-final{background:var(--dark); border-radius:16px; padding:48px 40px; text-align:center;}
+  .cta-final h2{color:#fff;}
+  .cta-final p{color:#c7cad2; max-width:50ch; margin:0 auto 28px;}
+
+  footer{background:var(--dark); color:#9a9da6; padding-block:32px; font-size:0.85rem;}
+  footer a{color:var(--accent);}
+
+  @media (max-width:760px){
+    .steps, .pricing, .why{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
-<h1>nefaSto — demo siti</h1>
-<p>Bozze di siti proposte ad attività senza sito. Progetto: <a href="https://nefasto.vercel.app">nefasto.vercel.app</a></p>
-<h2>Hair Club — Trezzo sull'Adda</h2>
-<div class="tiers">
-  <a href="/hairclub/">Base — 100€</a>
-  <a href="/hairclub-standard/">Standard — 179€</a>
-  <a href="/hairclub-premium/">Premium — 279€</a>
-</div>
+
+<nav class="top">
+  <span class="brand">Vetrina</span>
+  <a class="btn-nav" href="mailto:nefastoproject@gmail.com">Scrivici</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Un progetto nefaSto</p>
+    <h1>Il tuo sito, già finito, prima che tu decida di comprarlo</h1>
+    <p class="sub">Costruiamo il sito della tua attività usando le informazioni che già trovi su Google. Te lo mostriamo pronto. Se ti piace, lo tieni per 100, 179 o 279€. Se non ti piace, non ci devi nulla.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#prezzi">Vedi i prezzi</a>
+      <a class="btn btn-ghost" href="https://nefasto.vercel.app" target="_blank" rel="noopener">Chi siamo</a>
+    </div>
+  </div>
+</header>
+
+<section class="come-funziona">
+  <div class="wrap">
+    <h2>Come funziona</h2>
+    <p class="lead">Tre passaggi, nessuno dei quali ti costa tempo prima di vedere il risultato.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Troviamo la tua attività</h3>
+        <p>Cerchiamo attività senza un sito funzionante e raccogliamo le informazioni già pubbliche (indirizzo, orari, servizi).</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Costruiamo il sito</h3>
+        <p>Un sito vero, pubblicato online, con le tue informazioni reali — non una bozza, non un mockup.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Decidi tu</h3>
+        <p>Lo vedi finito. Se ti piace, paghi e resta tuo. Se non ti piace, non paghi nulla e non ti ricontattiamo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prezzi" id="prezzi">
+  <div class="wrap">
+    <h2>Prezzi</h2>
+    <p class="lead">Una tantum. Nessun abbonamento mensile forzato.</p>
+    <div class="pricing">
+      <div class="plan">
+        <div class="tag">Base</div>
+        <div class="price">100€</div>
+        <ul>
+          <li>Sito one-page completo</li>
+          <li>Foto professionali di repertorio</li>
+          <li>Listino/servizi, orari, contatti</li>
+          <li>SEO locale di base</li>
+          <li>Hosting incluso</li>
+        </ul>
+        <a class="btn btn-ghost" style="border-color:var(--border); color:var(--ink); justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Base">Richiedi</a>
+      </div>
+      <div class="plan featured">
+        <div class="tag">Standard</div>
+        <div class="price">179€</div>
+        <ul>
+          <li>Tutto quello del Base</li>
+          <li>Pulsante prenotazione sempre visibile</li>
+          <li>Collegamento ai tuoi social</li>
+          <li>Mappa per raggiungerti</li>
+        </ul>
+        <a class="btn btn-primary" style="justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Standard">Richiedi</a>
+      </div>
+      <div class="plan">
+        <div class="tag">Premium</div>
+        <div class="price">279€</div>
+        <ul>
+          <li>Tutto quello dello Standard</li>
+          <li>Galleria fotografica ampliata</li>
+          <li>Dominio personalizzato incluso</li>
+          <li>Codice sorgente consegnato a te</li>
+        </ul>
+        <a class="btn btn-ghost" style="border-color:var(--border); color:var(--ink); justify-content:center;" href="mailto:nefastoproject@gmail.com?subject=Vetrina%20-%20Pacchetto%20Premium">Richiedi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="perche">
+  <div class="wrap">
+    <h2>Perché Vetrina</h2>
+    <div class="why">
+      <div class="why-item">
+        <h3>Vedi prima, paghi dopo</h3>
+        <p>Non ti chiediamo di fidarti su descrizione: il sito esiste già, con le tue informazioni, prima di chiederti un euro.</p>
+      </div>
+      <div class="why-item">
+        <h3>Nessun blocco se cambi idea</h3>
+        <p>Il codice resta tuo (piano Premium) e possiamo consegnarlo comunque su richiesta anche sugli altri piani.</p>
+      </div>
+      <div class="why-item">
+        <h3>Gestito da un progetto AI trasparente</h3>
+        <p>Vetrina fa parte di nefaSto, un progetto che pubblica in pubblico le proprie decisioni, incluse quelle sbagliate. Dietro c'è comunque una persona reale, raggiungibile.</p>
+      </div>
+      <div class="why-item">
+        <h3>Nessun abbonamento forzato</h3>
+        <p>Paghi una volta. Se un domani vuoi cambiare gestore, il sito resta tuo, non nostro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-finale">
+  <div class="wrap">
+    <div class="cta-final">
+      <h2>Hai un'attività senza sito funzionante?</h2>
+      <p>Scrivici, o aspetta che ti troviamo noi — o in ogni caso puoi già vedere degli <a href="/esempi/" style="color:var(--accent)">esempi reali</a> di cosa costruiamo.</p>
+      <a class="btn btn-primary" href="mailto:nefastoproject@gmail.com">nefastoproject@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Vetrina è un progetto di <a href="https://nefasto.vercel.app" target="_blank" rel="noopener">nefaSto</a>.
+  </div>
+</footer>
+
 </body>
 </html>

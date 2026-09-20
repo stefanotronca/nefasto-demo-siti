@@ -64,11 +64,14 @@
   nav.top .brand{font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:#f4ecd8;}
   nav.top a.btn-book{background:var(--accent); color:var(--accent-ink); font-weight:600; font-size:0.85rem; padding:9px 18px; border-radius:999px; text-decoration:none;}
   header.hero{
-    position:relative; min-height:82vh; display:flex; align-items:flex-end;
-    background: linear-gradient(0deg, rgba(15,14,11,0.9) 10%, rgba(15,14,11,0.4) 55%, rgba(15,14,11,0.15) 100%),
-      url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80') center/cover no-repeat;
+    position:relative; min-height:82vh; display:flex; align-items:flex-end; overflow:hidden; background:var(--dark);
   }
-  header.hero .inner{padding-block:64px 46px; position:relative;}
+  .hero-media{position:absolute; inset:0; overflow:hidden;}
+  .hero-parallax{position:absolute; top:-40px; left:0; right:0; bottom:-40px; will-change:transform;}
+  .hero-kenburns{width:100%; height:100%; object-fit:cover; display:block; transform-origin:center center; animation:heroKenBurns 22s ease-in-out infinite alternate;}
+  @keyframes heroKenBurns{ from{transform:scale(1);} to{transform:scale(1.15);} }
+  .hero-overlay{position:absolute; inset:0; background:linear-gradient(0deg, rgba(15,14,11,0.9) 10%, rgba(15,14,11,0.4) 55%, rgba(15,14,11,0.15) 100%); pointer-events:none;}
+  header.hero .inner{padding-block:64px 46px; position:relative; z-index:2;}
   header.hero .eyebrow{font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 0 12px;}
   header.hero h1{font-family:var(--font-display); font-weight:500; font-style:italic; font-size:clamp(2.6rem, 7.5vw, 4.2rem); margin:0 0 14px; color:#faf6ec; text-wrap:balance;}
   header.hero p.tagline{font-size:1.1rem; margin:0 0 24px; color:#e7e1d0; max-width:44ch;}
@@ -112,7 +115,51 @@
   #cookie-accept{background:var(--accent); color:var(--accent-ink);}
   #cookie-reject{background:transparent; color:#f4f0e4; border:1px solid rgba(244,240,228,0.35);}
   [hidden]{display:none!important;}
-  @media (max-width:640px){.services{grid-template-columns:1fr;} .gallery{grid-template-columns:1fr; }.gallery .g-main{aspect-ratio:16/10;} .gallery .g-sub{aspect-ratio:16/9;}}
+
+  /* --- Reveal a scroll --- */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  .gallery .reveal:nth-child(1){transition-delay:0s;}
+  .gallery .reveal:nth-child(2){transition-delay:.12s;}
+  .gallery .reveal:nth-child(3){transition-delay:.24s;}
+  .services .reveal:nth-child(1){transition-delay:0s;}
+  .services .reveal:nth-child(2){transition-delay:.08s;}
+  .services .reveal:nth-child(3){transition-delay:.16s;}
+  .services .reveal:nth-child(4){transition-delay:.24s;}
+  .ba-grid .reveal:nth-child(1){transition-delay:0s;}
+  .ba-grid .reveal:nth-child(2){transition-delay:.12s;}
+  .ba-grid .reveal:nth-child(3){transition-delay:.24s;}
+
+  /* --- Slider prima/dopo --- */
+  section.prima-dopo .section-lead{font-size:0.98rem; color:var(--ink-soft); max-width:62ch; margin:-6px 0 26px;}
+  .ba-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .ba-frame{position:relative; aspect-ratio:4/5; border-radius:16px; overflow:hidden; background:#101010; cursor:ew-resize; touch-action:pan-y;
+    box-shadow:0 22px 44px -22px rgba(20,16,8,0.45), 0 2px 8px rgba(20,16,8,0.12);}
+  .ba-frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; user-select:none; -webkit-user-drag:none;}
+  .ba-after-wrap{position:absolute; inset:0; clip-path:inset(0 calc(100% - var(--pos, 50%)) 0 0);}
+  .ba-handle{position:absolute; top:0; bottom:0; left:var(--pos, 50%); transform:translateX(-50%); width:2px; background:rgba(255,255,255,0.88); pointer-events:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.15);}
+  .ba-handle span{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:40px; height:40px; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--accent-ink);
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,0,0,0.06);}
+  .ba-handle span::before{content:'\21c6';}
+  .ba-range{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  .ba-frame:has(.ba-range:focus-visible){outline:2px solid var(--accent); outline-offset:3px;}
+  .ba-label{margin:10px 2px 0; font-size:0.88rem; color:var(--ink-soft); text-align:center;}
+
+  /* --- Micro-interazioni CTA --- */
+  .btn-primary, .btn-book{position:relative; overflow:hidden; transition:transform .25s ease;}
+  .btn-ripple{position:absolute; border-radius:50%; background:rgba(255,255,255,0.55); transform:scale(0); animation:btnRipple .55s ease-out forwards; pointer-events:none;}
+  @keyframes btnRipple{ to{ transform:scale(2.6); opacity:0; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-kenburns{animation:none;}
+    .reveal{transition:none; opacity:1; transform:none;}
+    .btn-primary, .btn-book{transition:none;}
+    .btn-ripple{animation:none; display:none;}
+  }
+
+  @media (max-width:640px){.services{grid-template-columns:1fr;} .gallery{grid-template-columns:1fr; }.gallery .g-main{aspect-ratio:16/10;} .gallery .g-sub{aspect-ratio:16/9;} .ba-grid{grid-template-columns:1fr; gap:26px;}}
 </style>
 </head>
 <body>
@@ -124,6 +171,12 @@
 </nav>
 
 <header class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <div class="hero-parallax" id="heroParallax">
+      <img class="hero-kenburns" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80" alt="">
+    </div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="wrap inner">
     <p class="eyebrow">Via Esempio, 1 — Città Esempio</p>
     <h1>Nefasto Parrucchieri</h1>
@@ -147,9 +200,49 @@
   <div class="wrap">
     <h2>Galleria</h2>
     <div class="gallery">
-      <div class="g-main"><img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=900&q=80" alt="Immagine dimostrativa di stile — styling con arricciacapelli" loading="lazy"></div>
-      <div class="g-sub"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=700&q=80" alt="Immagine dimostrativa di stile — piega in corso" loading="lazy"></div>
-      <div class="g-sub"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Immagine dimostrativa di ambiente salone (foto di repertorio)" loading="lazy"></div>
+      <div class="g-main reveal"><img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=900&q=80" alt="Immagine dimostrativa di stile — styling con arricciacapelli" loading="lazy"></div>
+      <div class="g-sub reveal"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=700&q=80" alt="Immagine dimostrativa di stile — piega in corso" loading="lazy"></div>
+      <div class="g-sub reveal"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Immagine dimostrativa di ambiente salone (foto di repertorio)" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="prima-dopo">
+  <div class="wrap">
+    <h2>Prima e dopo</h2>
+    <p class="section-lead">Trascina il cursore su ogni foto per vedere la trasformazione. (Foto di repertorio a scopo dimostrativo, non di clienti reali del salone di fantasia)</p>
+    <div class="ba-grid">
+
+      <div class="ba-slider reveal">
+        <div class="ba-frame" style="--pos:50%">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1560264641-1b5191cc63e2?w=800&q=80" alt="Prima: ciocca di capelli mossi e vissuti (foto di repertorio)" loading="lazy">
+          <div class="ba-after-wrap"><img class="ba-after" src="https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=800&q=80" alt="Dopo: ciocca di capelli lisci e lucenti (foto di repertorio)" loading="lazy"></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Trascina per confrontare prima e dopo — colore e trattamento">
+          <div class="ba-handle" aria-hidden="true"><span></span></div>
+        </div>
+        <p class="ba-label">Colore &amp; trattamento</p>
+      </div>
+
+      <div class="ba-slider reveal">
+        <div class="ba-frame" style="--pos:50%">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1611590027211-b954fd027b51?w=800&q=80" alt="Prima: profilo con capelli ricci al naturale (foto di repertorio)" loading="lazy">
+          <div class="ba-after-wrap"><img class="ba-after" src="https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=800&q=80" alt="Dopo: profilo con piega liscia e ordinata (foto di repertorio)" loading="lazy"></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Trascina per confrontare prima e dopo — piega e styling">
+          <div class="ba-handle" aria-hidden="true"><span></span></div>
+        </div>
+        <p class="ba-label">Piega &amp; styling</p>
+      </div>
+
+      <div class="ba-slider reveal">
+        <div class="ba-frame" style="--pos:50%">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1644556687978-0d541b2f4c91?w=800&q=80" alt="Prima: capelli lunghi mossi visti di spalle (foto di repertorio)" loading="lazy">
+          <div class="ba-after-wrap"><img class="ba-after" src="https://images.unsplash.com/photo-1730740505665-511513481bce?w=800&q=80" alt="Dopo: capelli lisci e lucenti visti di spalle (foto di repertorio)" loading="lazy"></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Trascina per confrontare prima e dopo — taglio e lucentezza">
+          <div class="ba-handle" aria-hidden="true"><span></span></div>
+        </div>
+        <p class="ba-label">Taglio &amp; lucentezza</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -158,10 +251,10 @@
   <div class="wrap">
     <h2>Servizi</h2>
     <div class="services">
-      <div class="service"><span class="mark">✂</span><h3>Taglio e piega</h3><p>Su misura per te, dal consulto alla messa in piega finale.</p></div>
-      <div class="service"><span class="mark">◐</span><h3>Colore e balayage</h3><p>Colorazione, schiariture e balayage su misura per ogni base.</p></div>
-      <div class="service"><span class="mark">✦</span><h3>Trattamenti e cheratina</h3><p>Ricostruzione, stiratura e cura per capelli sani e luminosi.</p></div>
-      <div class="service"><span class="mark">◆</span><h3>Extension e treccine</h3><p>Allungamento capelli ed acconciature con treccine.</p></div>
+      <div class="service reveal"><span class="mark">✂</span><h3>Taglio e piega</h3><p>Su misura per te, dal consulto alla messa in piega finale.</p></div>
+      <div class="service reveal"><span class="mark">◐</span><h3>Colore e balayage</h3><p>Colorazione, schiariture e balayage su misura per ogni base.</p></div>
+      <div class="service reveal"><span class="mark">✦</span><h3>Trattamenti e cheratina</h3><p>Ricostruzione, stiratura e cura per capelli sani e luminosi.</p></div>
+      <div class="service reveal"><span class="mark">◆</span><h3>Extension e treccine</h3><p>Allungamento capelli ed acconciature con treccine.</p></div>
     </div>
   </div>
 </section>
@@ -252,6 +345,95 @@
     document.getElementById('map-frame').hidden = false;
     setChoice('accepted');
   });
+
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Parallax leggero sull'hero
+  (function(){
+    var wrap = document.getElementById('heroParallax');
+    if (!wrap || reducedMotion) return;
+    var ticking = false;
+    function update(){
+      var y = window.scrollY || window.pageYOffset;
+      var t = Math.max(-40, Math.min(40, y * 0.12));
+      wrap.style.transform = 'translateY(' + t + 'px)';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  })();
+
+  // Reveal a scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Slider prima/dopo
+  (function(){
+    document.querySelectorAll('.ba-frame').forEach(function(frame){
+      var range = frame.querySelector('.ba-range');
+      function setPos(pct){
+        pct = Math.max(0, Math.min(100, pct));
+        frame.style.setProperty('--pos', pct + '%');
+        range.value = pct;
+      }
+      function pctFromX(clientX){
+        var rect = frame.getBoundingClientRect();
+        return ((clientX - rect.left) / rect.width) * 100;
+      }
+      var dragging = false;
+      frame.addEventListener('pointerdown', function(e){
+        dragging = true;
+        if (frame.setPointerCapture) frame.setPointerCapture(e.pointerId);
+        setPos(pctFromX(e.clientX));
+      });
+      frame.addEventListener('pointermove', function(e){ if (dragging) setPos(pctFromX(e.clientX)); });
+      ['pointerup', 'pointercancel', 'pointerleave'].forEach(function(ev){
+        frame.addEventListener(ev, function(){ dragging = false; });
+      });
+      range.addEventListener('input', function(){ setPos(parseFloat(range.value)); });
+    });
+  })();
+
+  // Micro-interazioni sui CTA principali: ripple al click + effetto magnetico all'hover
+  (function(){
+    var canHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+    document.querySelectorAll('.btn-primary, .btn-book').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        if (reducedMotion) return;
+        var rect = btn.getBoundingClientRect();
+        var size = Math.max(rect.width, rect.height) * 1.4;
+        var span = document.createElement('span');
+        span.className = 'btn-ripple';
+        span.style.width = span.style.height = size + 'px';
+        span.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        span.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        btn.appendChild(span);
+        setTimeout(function(){ span.remove(); }, 550);
+      });
+      if (canHover && !reducedMotion) {
+        btn.addEventListener('mousemove', function(e){
+          var rect = btn.getBoundingClientRect();
+          var mx = e.clientX - rect.left - rect.width / 2;
+          var my = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (mx * 0.18) + 'px,' + (my * 0.35) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
+      }
+    });
+  })();
 </script>
 </body>
 </html>

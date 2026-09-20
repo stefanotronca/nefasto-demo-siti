@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nefasto Parrucchieri — esempio dimostrativo di sito per parrucchiere</title>
+<meta name="description" content="Nefasto Parrucchieri è un'attività di fantasia usata come esempio dimostrativo: taglio, colore e trattamenti. Via Esempio 1, Città Esempio.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Nefasto Parrucchieri — esempio dimostrativo">
+<meta property="og:description" content="Esempio di fantasia: taglio, colore, trattamenti. Via Esempio 1, Città Esempio.">
+<meta property="og:type" content="business.business">
+<link rel="canonical" href="https://nefasto-demo-siti-s5wq.vercel.app/nefasto-parrucchieri/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Nefasto Parrucchieri",
+  "description": "Attività di fantasia usata come esempio dimostrativo, non corrisponde a un'azienda reale.",
+  "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80",
+  "telephone": "+390000000000",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Esempio, 1",
+    "addressLocality": "Città Esempio",
+    "addressRegion": "XX",
+    "postalCode": "00000",
+    "addressCountry": "IT"
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"14:30","closes":"22:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"18:00"}
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Manrope:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f4f2ec; --surface:#ffffff; --ink:#2a2925; --ink-soft:#65625a;
+    --dark:#1c1b18; --accent:#a08862; --accent-ink:#2a2418;
+    --border:#e2ddd0;
+    --font-display:'Bodoni Moda', Georgia, serif;
+    --font-body:'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15140f; --surface:#1e1c17; --ink:#eeece4; --ink-soft:#bab5a5;
+      --dark:#0f0e0b; --accent:#c7a875; --accent-ink:#1c1810;
+      --border:#332f26;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15140f; --surface:#1e1c17; --ink:#eeece4; --ink-soft:#bab5a5;
+    --dark:#0f0e0b; --accent:#c7a875; --accent-ink:#1c1810;
+    --border:#332f26;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 20px;}
+  nav.top{
+    position:sticky; top:0; z-index:20; background:var(--dark);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 20px;
+  }
+  nav.top .brand{font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:#f4ecd8;}
+  nav.top a.btn-book{
+    background:var(--accent); color:var(--accent-ink); font-weight:600; font-size:0.85rem;
+    padding:9px 18px; border-radius:999px; text-decoration:none;
+  }
+  header.hero{
+    position:relative; min-height:78vh; display:flex; align-items:flex-end;
+    background: linear-gradient(0deg, rgba(15,14,11,0.88) 10%, rgba(15,14,11,0.35) 55%, rgba(15,14,11,0.15) 100%),
+      url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80') center/cover no-repeat;
+  }
+  header.hero .inner{padding-block:60px 44px; position:relative;}
+  header.hero .eyebrow{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin:0 0 12px;
+  }
+  header.hero h1{
+    font-family:var(--font-display); font-weight:500; font-style:italic;
+    font-size:clamp(2.4rem, 7vw, 3.8rem); margin:0 0 14px; color:#faf6ec;
+    text-wrap:balance;
+  }
+  header.hero p.tagline{font-size:1.08rem; margin:0 0 24px; color:#e7e1d0; max-width:44ch;}
+  .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:999px;
+    font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent); color:var(--accent-ink);}
+  .btn-ghost{background:rgba(255,255,255,0.08); color:#f4f0e4; border-color:rgba(244,240,228,0.35);}
+  .hours-pill{
+    display:inline-flex; gap:10px; align-items:baseline;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22);
+    padding:8px 16px; border-radius:999px; font-size:0.85rem; color:#f4f0e4;
+  }
+  .hours-pill b{color:var(--accent); font-weight:600;}
+  section{padding-block:48px;}
+  h2{
+    font-family:var(--font-display); font-weight:500; font-size:1.8rem;
+    margin:0 0 18px; color:var(--ink); text-wrap:balance;
+  }
+  section.about p{font-size:1.05rem; color:var(--ink-soft); max-width:60ch;}
+  .service-section{
+    display:grid; grid-template-columns:1fr 1.1fr; gap:32px; align-items:center;
+  }
+  .service-photo{
+    aspect-ratio:4/5; border-radius:12px; overflow:hidden;
+  }
+  .service-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .services{display:grid; gap:14px;}
+  .service{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .service .mark{font-family:var(--font-display); font-style:italic; font-size:1.3rem; color:var(--accent); margin-right:8px;}
+  .service h3{display:inline; font-size:1.05rem; font-weight:600;}
+  .service p{font-size:0.92rem; color:var(--ink-soft); margin:6px 0 0;}
+  table.orari{border-collapse:collapse; width:100%; max-width:440px; font-variant-numeric:tabular-nums;}
+  table.orari td{padding:9px 0; border-bottom:1px solid var(--border); font-size:0.95rem;}
+  table.orari td:last-child{text-align:right; color:var(--ink-soft);}
+  .map-frame{border:1px solid var(--border); border-radius:12px; overflow:hidden; max-width:100%;}
+  .map-frame iframe{display:block; width:100%; height:280px; border:0;}
+  .map-consent{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:32px 20px; text-align:center; color:var(--ink-soft); font-size:0.9rem;
+  }
+  .map-consent button{
+    margin-top:12px; background:var(--accent); color:var(--accent-ink); border:none;
+    padding:9px 18px; border-radius:999px; font-weight:600; font-size:0.85rem; cursor:pointer;
+  }
+  footer{background:var(--dark); color:#d8d2c0; padding-block:36px 30px;}
+  footer .contact-grid{display:grid; gap:6px; font-size:0.95rem; margin-bottom:18px;}
+  footer .contact-grid strong{color:#f4ecd8; font-weight:600;}
+  footer a{color:var(--accent);}
+  .demo-note{font-size:0.76rem; color:#a39c86; border-top:1px solid #35322a; padding-top:16px; margin-top:20px;}
+  #cookie-banner{
+    position:fixed; left:16px; right:16px; bottom:16px; z-index:50;
+    max-width:560px; margin:0 auto; background:var(--dark); color:#f4f0e4;
+    border-radius:12px; padding:18px 20px; font-size:0.85rem; box-shadow:0 8px 30px rgba(0,0,0,0.3);
+  }
+  #cookie-banner p{margin:0 0 12px;}
+  #cookie-banner a{color:var(--accent);}
+  .cookie-actions{display:flex; gap:10px; flex-wrap:wrap;}
+  .cookie-actions button{
+    border:none; border-radius:999px; padding:9px 16px; font-size:0.82rem; font-weight:600; cursor:pointer;
+  }
+  #cookie-accept{background:var(--accent); color:var(--accent-ink);}
+  #cookie-reject{background:transparent; color:#f4f0e4; border:1px solid rgba(244,240,228,0.35);}
+  [hidden]{display:none!important;}
+  @media (max-width:640px){
+    .service-section{grid-template-columns:1fr;}
+    .service-photo{aspect-ratio:16/9;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <span class="brand">Nefasto Parrucchieri</span>
+  <a class="btn-book" href="tel:+390000000000">Prenota</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap inner">
+    <p class="eyebrow">Via Esempio, 1 — Città Esempio</p>
+    <h1>Nefasto Parrucchieri</h1>
+    <p class="tagline">Il salone di Anna Esempio, dove ogni taglio parte da un'idea precisa. (Nome ed esercizio di fantasia)</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+390000000000">Chiama e prenota</a>
+      <a class="btn btn-ghost" href="#">Instagram (esempio)</a>
+    </div>
+    <span class="hours-pill">Oggi: <b>aperto</b> · 9:00 – 19:00</span>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <h2>Il salone</h2>
+    <p>Un salone da donna immaginario nel cuore di una città di fantasia, dove Anna e il suo staff (anch'essi di fantasia) seguono ogni cliente con attenzione, dal taglio al colore, senza fretta.</p>
+  </div>
+</section>
+
+<section class="offerte">
+  <div class="wrap">
+    <h2>Servizi</h2>
+    <div class="service-section">
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80" alt="Immagine dimostrativa di stile — piega in corso" loading="lazy">
+      </div>
+      <div class="services">
+        <div class="service"><span class="mark">✂</span><h3>Taglio e piega</h3><p>Su misura per te, dal consulto alla messa in piega finale.</p></div>
+        <div class="service"><span class="mark">◐</span><h3>Colore e balayage</h3><p>Colorazione, schiariture e balayage su misura per ogni base.</p></div>
+        <div class="service"><span class="mark">✦</span><h3>Trattamenti e cheratina</h3><p>Ricostruzione, stiratura e cura per capelli sani e luminosi.</p></div>
+        <div class="service"><span class="mark">◆</span><h3>Extension e treccine</h3><p>Allungamento capelli ed acconciature con treccine.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="listino">
+  <div class="wrap">
+    <h2>Listino prezzi</h2>
+    <table class="orari">
+      <tr><td>Taglio</td><td>19,50 €</td></tr>
+      <tr><td>Taglio parziale</td><td>13,50 €</td></tr>
+      <tr><td>Spuntata</td><td>10,50 €</td></tr>
+      <tr><td>Taglio uomo</td><td>19,00 €</td></tr>
+      <tr><td>Taglio bimbo (fino a 10 anni)</td><td>13,00 €</td></tr>
+      <tr><td>Taglio ragazzo (fino a 18 anni)</td><td>15,00 €</td></tr>
+      <tr><td>Piega</td><td>16,00 €</td></tr>
+      <tr><td>Servizio sposa (1 prova + 1 piega)</td><td>115,00 €</td></tr>
+    </table>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:14px;">Prezzi indicativi di esempio, colore ed extension su preventivo in base alla lunghezza.</p>
+  </div>
+</section>
+
+<section class="orari-section">
+  <div class="wrap">
+    <h2>Orari</h2>
+    <table class="orari">
+      <tr><td>Lunedì</td><td>9:00 – 19:00</td></tr>
+      <tr><td>Martedì</td><td>14:30 – 22:00</td></tr>
+      <tr><td>Mercoledì – Venerdì</td><td>9:00 – 19:00</td></tr>
+      <tr><td>Sabato</td><td>8:30 – 18:00</td></tr>
+      <tr><td>Domenica</td><td>chiuso</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="dove">
+  <div class="wrap">
+    <h2>Dove siamo</h2>
+    <div id="map-consent" class="map-consent">
+      <p>Qui sotto ci sarebbe la mappa di Google — richiede il tuo consenso ai cookie per essere mostrata.</p>
+      <button id="map-show-btn">Mostra la mappa</button>
+    </div>
+    <div id="map-frame" class="map-frame" hidden>
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Milano&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 style="color:#faf6ec">Prenota</h2>
+    <div class="contact-grid">
+      <div><strong>Indirizzo</strong> — Via Esempio, 1, Città Esempio (dati di fantasia)</div>
+      <div><strong>Telefono</strong> — numero di esempio, non reale</div>
+    </div>
+    <p class="demo-note">Esempio di articolo blog (funzionalità dimostrativa): <a href="/nefasto-parrucchieri/blog/piega-che-dura/">come far durare la piega più a lungo →</a></p>
+    <p class="demo-note">Sito interamente dimostrativo creato da nefaSto (nefasto.vercel.app). "Nefasto Parrucchieri" è un nome ed un'attività di fantasia, non corrisponde ad alcuna azienda reale: indirizzo, telefono e titolare sono inventati a scopo di esempio. Foto di repertorio con licenza libera. <a href="#" id="cookie-policy-link">Informativa cookie</a>.</p>
+    <p id="cookie-policy-text" class="demo-note" hidden>Questo sito usa solo un cookie tecnico necessario se accetti di visualizzare la mappa di Google (che imposta i propri cookie di terze parti). Nessun cookie di profilazione o tracciamento pubblicitario è presente.</p>
+  </div>
+</footer>
+
+<div id="cookie-banner" hidden>
+  <p>Usiamo un cookie tecnico solo se scegli di visualizzare la mappa (Google). Nessun tracciamento pubblicitario.</p>
+  <div class="cookie-actions">
+    <button id="cookie-accept">Accetta</button>
+    <button id="cookie-reject">Rifiuta</button>
+  </div>
+</div>
+
+<script>
+  var banner = document.getElementById('cookie-banner');
+  var seen = false;
+  try { seen = localStorage.getItem('nefasto_cookie_choice'); } catch(e) {}
+  if (!seen) { banner.hidden = false; }
+
+  function setChoice(v){
+    try { localStorage.setItem('nefasto_cookie_choice', v); } catch(e) {}
+    banner.hidden = true;
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function(){ setChoice('accepted'); });
+  document.getElementById('cookie-reject').addEventListener('click', function(){ setChoice('rejected'); });
+
+  document.getElementById('map-show-btn').addEventListener('click', function(){
+    document.getElementById('map-consent').hidden = true;
+    document.getElementById('map-frame').hidden = false;
+    setChoice('accepted');
+  });
+
+  document.getElementById('cookie-policy-link').addEventListener('click', function(e){
+    e.preventDefault();
+    var t = document.getElementById('cookie-policy-text');
+    t.hidden = !t.hidden;
+  });
+</script>
+
+</body>
+</html>
